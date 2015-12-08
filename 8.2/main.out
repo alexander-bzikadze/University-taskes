@@ -1,0 +1,65 @@
+Greatings, my friend! Use the following commands:
+0 - to quit.
+1 - to add some value.
+2 - to delete some value
+3 - to check the existense of some value.
+4 - to see all the values.
+
+Enter a command.
+Enter the value.
+The entered value is 10.
+10 successfully added.
+
+Enter a command.
+Enter the value.
+The entered value is 15.
+15 successfully added.
+
+Enter a command.
+Enter the value.
+The entered value is 10.
+10 successfully deleted.
+
+Enter a command.
+Current tree consists of: 15.
+
+Enter a command.
+Enter the value.
+The entered value is 10.
+10 successfully added.
+
+Enter a command.
+Enter the value.
+The entered value is 2.
+2 successfully added.
+
+Enter a command.
+Enter the value.
+The entered value is 4.
+4 successfully added.
+
+Enter a command.
+Enter the value.
+The entered value is 5.
+5 successfully added.
+
+Enter a command.
+Enter the value.
+The entered value is 2.
+2 successfully added.
+
+Enter a command.
+Enter the value.
+The entered value is 9.
+9 successfully added.
+
+Enter a command.
+Current tree consists of: 2 4 5 9 10 15.
+
+Enter a command.
+Enter the value.
+The entered value is 4.
+4 successfully deleted.
+
+Enter a command.
+Farewell, friend
