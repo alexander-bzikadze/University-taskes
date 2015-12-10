@@ -3,5 +3,6 @@
 
 int main()
 {
+    PointerStack<int> *stack = new PointerStack<int>();
     return 0;
 }
