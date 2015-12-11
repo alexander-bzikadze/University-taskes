@@ -1,5 +1,6 @@
 #include "Calculator.h"
 #include "Complex.h"
+#include "NVector.h"
 
 using namespace std;
 
