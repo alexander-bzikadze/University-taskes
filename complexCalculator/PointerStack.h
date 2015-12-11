@@ -1,7 +1,7 @@
 #pragma once
 #include "IStack.h"
 
-template<typename T>
+template<class T>
 class PointerStack : public IStack<T>
 {
 public:
@@ -15,7 +15,7 @@ public:
         }
     }
 
-    void push(T value)
+    void push(T const &value)
     {
         PointerStackElement *newElement = new PointerStackElement(value, head);
         head = newElement;
@@ -29,7 +29,7 @@ public:
         }
         else
         {
-            PointerStackElement *lastElement = head->getNext();
+            PointerStackElement *lastElement = head;
             T returnValue = head->getValue();
             delete head;
             head = lastElement;
@@ -47,7 +47,7 @@ private:
     class PointerStackElement 
     {
     public:
-        PointerStackElement(T value, PointerStackElement *next)
+        PointerStackElement(T const &value, PointerStackElement *next)
             : value(value), next(next)
         {
         }
