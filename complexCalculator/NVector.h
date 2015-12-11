@@ -1,11 +1,5 @@
 #pragma once
 
-template <class T>
-class OVector
-{
-
-};
-
 template <class T, class... Args>
 class NVector
 {
@@ -14,5 +8,11 @@ public:
 
 private:
     T first;
-    Args... args; !!!
+    NVector<Args...> args...;
+};
+
+template <class T>
+class NVector
+{
+
 };
