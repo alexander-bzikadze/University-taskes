@@ -1,32 +1,50 @@
 #pragma once
+#include <iostream>
 
 template <typename T>
-class List
+class BasicPointerList
 {
 public:
-    List();
-    ~List();
+    BasicPointerList();
+    ~BasicPointerList();
 
+    ///Adds new element to the end of the list
     void add(T value);
+
+    ///Searches for an element and deletes it
     void deleteElement(T value);
 
+    ///Deletes first element in the list and returns its value
     T pop();
 
+    ///Sets iterator as first element
     void setIteratorFirst();
+
+    ///Sets iterator as next element
     void moveIteratorForward();
-    bool isIteratorNullptr();
+
+    ///Returns result of comparison iterator to nullptr
+    bool isIteratorNull() const;
+
+    ///Returns iterators value
     T getIteratorValue() const;
 
 private:
     class ListElement
     {
     public:
-        ListElement(T value);
+        ListElement(T value = T());
 
+        ///Adds child to the current element
         void addChild(ListElement *newElement);
+
+        ///Deletes child of the current element with no protection
         void deleteChild();
 
+        ///Returns current element's value
         T getValue() const;
+
+        ///Returns pointer to the next element
         ListElement *getNext() const;
 
     private:
@@ -40,16 +58,16 @@ private:
 };
 
 template <typename T>
-List<T>::ListElement::ListElement(T value) : value(value), next(nullptr) {}
+BasicPointerList<T>::ListElement::ListElement(T value) : value(value), next(nullptr) {}
 
 template <typename T>
-void List<T>::ListElement::addChild(ListElement *newElement)
+void BasicPointerList<T>::ListElement::addChild(ListElement *newElement)
 {
     next = newElement;
 }
 
 template <typename T>
-void List<T>::ListElement::deleteChild()
+void BasicPointerList<T>::ListElement::deleteChild()
 {
     ListElement *deletedElement = next;
     next = next->next;
@@ -57,22 +75,22 @@ void List<T>::ListElement::deleteChild()
 }
 
 template <typename T>
-T List<T>::ListElement::getValue() const
+T BasicPointerList<T>::ListElement::getValue() const
 {
     return value;
 }
 
 template <typename T>
-List<T>::ListElement *List::ListElement::getNext() const
+typename BasicPointerList<T>::ListElement *BasicPointerList<T>::ListElement::getNext() const
 {
     return next;
 }
 
 template <typename T>
-List<T>::List() : first(nullptr), iterator(nullptr), last(nullptr) {}
+BasicPointerList<T>::BasicPointerList() : first(nullptr), iterator(nullptr), last(nullptr) {}
 
 template <typename T>
-List<T>::~List()
+BasicPointerList<T>::~BasicPointerList()
 {
     while (first != nullptr)
     {
@@ -81,7 +99,7 @@ List<T>::~List()
 }
 
 template <typename T>
-void List<T>::add(T value)
+void BasicPointerList<T>::add(T value)
 {
     if (last == nullptr)
     {
@@ -99,21 +117,25 @@ void List<T>::add(T value)
 }
 
 template <typename T>
-void List<T>::deleteElement(T value)
+void BasicPointerList<T>::deleteElement(T value)
 {
-    if (first == last)
+    if (first == last || first->getValue() == value)
     {
         pop();
     }
     else
     {
         setIteratorFirst();
-        while (iterator->getNext()->getValue() != value && !isIteratorNullptr())
+        while (iterator->getNext() != nullptr && iterator->getNext()->getValue() != value)
         {
             moveIteratorForward();
         }
-        if (!isIteratorNullptr())
+        if (iterator->getNext() != nullptr)
         {
+            if (iterator->getNext() == last)
+            {
+                last = iterator;
+            }
             ListElement *newElement = iterator->getNext()->getNext();
             iterator->deleteChild();
             iterator->addChild(newElement);
@@ -122,8 +144,12 @@ void List<T>::deleteElement(T value)
 }
 
 template <typename T>
-T List<T>::pop()
+T BasicPointerList<T>::pop()
 {
+    if (last == nullptr)
+    {
+        return T(); 
+    }
     if (first == last)
     {
         last = nullptr;
@@ -137,25 +163,30 @@ T List<T>::pop()
 }
 
 template <typename T>
-void List<T>::setIteratorFirst()
+void BasicPointerList<T>::setIteratorFirst()
 {
     iterator = first;
 }
 
+///There's no nullptr-protection as is supposed to be used with isIteratorNull()
 template <typename T>
-void List<T>::moveIteratorForward()
+void BasicPointerList<T>::moveIteratorForward()
 {
     iterator = iterator->getNext();
 }
 
 template <typename T>
-bool List<T>::isIteratorNullptr()
+bool BasicPointerList<T>::isIteratorNull() const
 {
     return iterator == nullptr;
 }
 
 template <typename T>
-T List<T>::getIteratorValue() const
+T BasicPointerList<T>::getIteratorValue() const
 {
+    if (isIteratorNull())
+    {
+        return T();
+    }
     return iterator->getValue();
 }
