@@ -1,28 +1,22 @@
 #include "cycleList.h"
 
-int const squadSize = 41;
-
 struct CycleListElement
 {
-    int number;
-    CycleListElement * next;
+    int number = 0;
+    CycleListElement * next = nullptr;
 };
 
 struct CycleList
 {
     int size = 0;
-    CycleListElement * first;
-    CycleListElement * last;
+    CycleListElement * first = nullptr;
+    CycleListElement * last = nullptr;
 };
 
 
 CycleList *  constructList()
 {
-    CycleList * list = new CycleList;
-    list -> size = 0;
-    list -> first = nullptr;
-    list -> last = nullptr;
-    return list;
+   return new CycleList;
 }
 
 void appendElement(CycleList * list, int inNumber)
@@ -42,7 +36,7 @@ void appendElement(CycleList * list, int inNumber)
     list -> last = tmp;
 }
 
-void constructSycarii(CycleList * list)
+void constructCycleList(CycleList * list, int squadSize)
 {
     for (int i = 0; i < squadSize; ++i)
     {
@@ -71,9 +65,8 @@ void deleteElement(CycleList * list, CycleListElement * currentElement)
 void delition(CycleList * list, int k)
 {
     --k;
-    CycleListElement * currentElement = new CycleListElement;
-    currentElement = list -> last;
-    while (list -> size > 2)
+    CycleListElement * currentElement = list -> last;
+    while (list -> size > 1)
     {
         for (int i = 0; i < k % list -> size ; ++i)
         {
@@ -90,8 +83,7 @@ void seeAllList(CycleList * list)
     {
         return;
     }
-    CycleListElement * currentElement = new CycleListElement;
-    currentElement = list -> first;
+    CycleListElement * currentElement = list -> first;
     std::cout << ' ' << currentElement -> number;
     while (currentElement -> next != list -> first)
     {

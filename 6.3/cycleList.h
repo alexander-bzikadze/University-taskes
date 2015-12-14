@@ -10,7 +10,7 @@ CycleList *  constructList();
 
 void appendElement(CycleList * list, int inNumber);
 
-void constructSycarii(CycleList * list);
+void constructCycleList(CycleList * list, int squadSize);
 
 void deleteElement(CycleList * list, CycleListElement * currentElement);
 

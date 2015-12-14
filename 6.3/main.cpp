@@ -9,9 +9,11 @@ void killingProcess()
     int k = 0;
     cout << "Enter the k value." << endl;
     cin >> k;
-    CycleList * list;
-    list = constructList();
-    constructSycarii(list);
+    int squadSize = 0;
+    cout << "Enter the squadSize value." << endl;
+    cin >> squadSize;
+    CycleList * list = constructList();
+    constructCycleList(list, squadSize);
     // seeAllList(list);
     delition(list, k);
     cout << "In order to survive stand on following positions: ";
