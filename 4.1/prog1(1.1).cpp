@@ -104,7 +104,7 @@ int binaryAddition(short * sumBin, short * firstBin, int firstSize, short * seco
     {
         sumBin[i] = firstBin[i];
     }
-    for ( int i = 0; i < max(firstSize, secondSize); ++i)
+    for (int i = 0; i < max(firstSize, secondSize); ++i)
     {
         sumBin[i] += secondBin[i];
     }
