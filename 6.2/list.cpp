@@ -10,15 +10,15 @@ void constrList(List & list)
 void add(List & list, int inNumber)
 {
     ListEl * tmp = new ListEl;
-    tmp -> number = inNumber;
-    tmp -> next = nullptr;
+    tmp->number = inNumber;
+    tmp->next = nullptr;
     if (list.first == nullptr)
     {
         list.first = tmp;
     }
     else
     {
-        list.last -> next = tmp;
+        list.last->next = tmp;
     }
     list.last = tmp;
 }
@@ -27,22 +27,22 @@ bool search(List list, ListEl * currentElement, int searchedNumber)
 {
     if (list.first == nullptr)
     {
-        return 1;
+        return true;
     }
     if (currentElement != nullptr)
     {  
         if (currentElement -> number == searchedNumber)
         {
-            return 0;
+            return false;
         }
         return search(list, currentElement -> next, searchedNumber);
     }
-    return 1;
+    return true;
 }
 
 bool deleteElement(List & list, ListEl * currentElement, int deletedNumber)
 {
-    if (deletedNumber == list.first -> number)
+    if (deletedNumber == list.first->number)
     {
         if (list.first == list.last)
         {
@@ -52,13 +52,13 @@ bool deleteElement(List & list, ListEl * currentElement, int deletedNumber)
         }
         else
         {
-            list.first = currentElement -> next;
+            list.first = currentElement->next;
             delete currentElement;
             currentElement = nullptr;
         }
         return 0;
     }
-    if (currentElement -> next != nullptr)
+    if (currentElement->next != nullptr)
     {
         if (currentElement -> next -> number == deletedNumber)
         {

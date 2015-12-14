@@ -1,5 +1,19 @@
 #include "dialogue.h"
 
+#include "list.h"
+
+#include <iostream>
+
+void greeting();
+
+void enterCommand(int & command);
+
+void addValue(List & sortedList);
+
+void deleteValue(List & sortedList);
+
+void seeOut(List sortedList);
+
 void greeting()
 {
     std::cout << "Use one of the following commands:\n0 - exit;\n1 - enter new value;\n2 - delete a value;\n3 - print the list." << std::endl;
@@ -23,10 +37,10 @@ void addValue(List & sortedList)
 void deleteValue(List & sortedList)
 {
     std::cout << "Choose some value for deletion." << std::endl;
-    int value;
+    int value = 0;
     std::cin >> value;
     std::cout << "You\'ve chosen to delete " << value << '.' << std::endl;
-    if(!search(sortedList, sortedList.first, value))
+    if (!search(sortedList, sortedList.first, value))
     {  
         deleteElement(sortedList, sortedList.first, value);
         std::cout << "Successful deletion." << std::endl;
