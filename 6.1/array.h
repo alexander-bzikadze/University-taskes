@@ -1,9 +1,5 @@
 #pragma once
 
-#include <algorithm>
-#include <utility>
-#include <iostream>
-#include <fstream>
 #include <string>
 
 short const maxNameSize = 20;
@@ -16,14 +12,14 @@ struct Contact
 
 int createDataBase(Contact * base);
 
-void inputContact(Contact * base, int & dataSize);
+void inputContact(Contact * base, int &dataSize);
 
-void printContact(Contact contact);
+void printContact(Contact const &contact);
 
-void printDataBase(Contact * base, int & dataSize);
+void printDataBase(Contact * base, int const &dataSize);
 
-void saveDataBase(Contact * base, int & dataSize);
+void saveDataBase(Contact * base, int const &dataSize);
 
-std::string searchByPhone(Contact * base, int & dataSize, std::string searchedPhone);
+std::string searchByPhone(Contact * base, int const &dataSize, std::string const &searchedPhone);
 
-std::string searchByName(Contact * base, int & dataSize, std::string searchedName);
+std::string searchByName(Contact * base, int const &dataSize, std::string const &searchedName);

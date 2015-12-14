@@ -1,10 +1,12 @@
 #include "dialogue.h"
 
+#include <iostream>
+
 short const maxSize = 100;
 
 void greeting()
 {
-    std::cout << "Use one of the following commands:\n0 - exit;\n1 - enter new contact;\n2 - find phone number by name;\n3 - find name by phone number;\n4 - save current contacts." << std::endl;
+    std::cout << "Use one of the following commands:\n0 - exit;\n1 - enter new contact;\n2 - find name by phone number;\n3 - find phone number by name;\n4 - save current contacts." << std::endl;
 }
 
 void enterCommand(int & command)
