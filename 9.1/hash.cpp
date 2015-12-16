@@ -51,26 +51,6 @@ void HashTable::input()
     }
 }
 
-// int HashTable::hashFunction(string const &word) //for English
-// {
-//     int result = 0;
-//     int const alphabetSize = 26;
-//     if (word.size() > 1)
-//     {
-//         for (int i = 0; i < word.size(); ++i)
-//         {
-//             result += word[i] - 'a';
-//             result %= alphabetSize;
-//         }
-//         result += (word[0] - 'a') * alphabetSize;
-//     }
-//     else
-//     {
-//         result += alphabetSize * alphabetSize + word[0] - 'a';
-//     }
-//     return result;
-// }
-
 int HashTable::hashFunction(string const &word)
 {
     int result = 0;
@@ -91,6 +71,17 @@ int HashTable::hashFunction(string const &word)
     return result;
 }
 
+void HashTable::print()
+{
+    for (int i = 0; i < maxSize; ++i)
+    {
+        if (list[i].doExist())
+        {
+            list[i].print();
+        }
+    }
+}
+
 // bool HashTable::isFromAlphabet(char i)
 // {
 //     if (isFromHighAlphabet(i) || i <=122 && i >= 97)
@@ -109,13 +100,22 @@ int HashTable::hashFunction(string const &word)
 //     return false;
 // }
 
-void HashTable::print()
-{
-    for (int i = 0; i < maxSize; ++i)
-    {
-        if (list[i].doExist())
-        {
-            list[i].print();
-        }
-    }
-}
+// int HashTable::hashFunction(string const &word) //for English
+// {
+//     int result = 0;
+//     int const alphabetSize = 26;
+//     if (word.size() > 1)
+//     {
+//         for (int i = 0; i < word.size(); ++i)
+//         {
+//             result += word[i] - 'a';
+//             result %= alphabetSize;
+//         }
+//         result += (word[0] - 'a') * alphabetSize;
+//     }
+//     else
+//     {
+//         result += alphabetSize * alphabetSize + word[0] - 'a';
+//     }
+//     return result;
+// }

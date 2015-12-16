@@ -90,14 +90,7 @@ bool List::check(string const &word)
     {
         currentElement = currentElement->getNext();
     }
-    if (currentElement != nullptr)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return currentElement != nullptr;
 }
 
 void List::print()
@@ -112,11 +105,7 @@ void List::print()
 
 bool List::doExist() const
 {
-    if (first != nullptr)
-    {
-        return true;
-    }
-    return false;
+    return first != nullptr;
 }
 
 int List::size() const
