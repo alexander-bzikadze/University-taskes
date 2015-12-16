@@ -23,29 +23,17 @@ void Reader::read()
 
 bool Reader::isOperand(int i)
 {
-    if (subStr[i] <= '9' && subStr[i] >= '0')
-    {
-        return true;
-    }
-    return false;
+    return subStr[i] <= '9' && subStr[i] >= '0';
 }
 
 bool Reader::isOperatorAddition(char i)
 {
-    if (i == '+' || i == '-')
-    {
-        return true;
-    }
-    return false;
+    return i == '+' || i == '-';
 }
 
 bool Reader::isOperatorMultiplication(char i)
 {
-    if (i == '*' || i == '/')
-    {
-        return true;
-    }
-    return false;
+    return i == '*' || i == '/';
 }
 
 void Reader::fillStacks()
@@ -106,7 +94,8 @@ void Reader::result()
     subStr[maxSize] = {};
     while (outputStack.top())
     {
-        subStr[size++] = outputStack.pop();
+        subStr[size] = outputStack.pop();
+        ++size;
     }
     // std::cout << std::endl;
     std::cout << "The prefix form is:" << std::endl;
