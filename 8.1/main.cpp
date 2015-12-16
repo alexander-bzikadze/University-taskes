@@ -14,8 +14,8 @@
 
 int main()
 {
-    AbstractList<PointerList> list = AbstractList<PointerList>();
-    // AbstractList<ArrayList> list = AbstractList<ArrayList>();
+    AbstractList<PointerList> list;
+    // AbstractList<ArrayList> list;
     ifstream file("main.in");
     if (!file.is_open())
     {
