@@ -1,5 +1,7 @@
 #include "tree.h"
 
+using namespace std;
+
 // bool isOperation(char character)
 // {
 //     return character == '+' || character == '-' ||
@@ -132,7 +134,7 @@ char * Tree::TreeElement::build(char * input)
                 number *= 10;
                 if (number >= 0)
                 {
-                number += input[i] - '0';
+                    number += input[i] - '0';
                 }
                 else
                 {

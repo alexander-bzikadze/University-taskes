@@ -1,7 +1,5 @@
 #pragma once
-#include "iostream"
-
-using namespace std;
+#include <iostream>
 
 class Tree
 {
