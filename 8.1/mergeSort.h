@@ -5,14 +5,12 @@ template <class T>
 class AbstractList
 {
 public:
-    AbstractList() 
+    AbstractList() : globalIterator(0)
     {
-        list;
     }
 
     ~AbstractList() 
     {
-        list.~T();
     }
 
     void add(int value) 
@@ -25,6 +23,11 @@ public:
         list.print();
     }
 
+    int getGlobal() const
+    {
+        return globalIterator;
+    }
+
     void sort()
     {
         if (list.size() == 0)
@@ -32,19 +35,23 @@ public:
             return;
         }
         T * subList = new T();
+        globalIterator++;
         while (list.size() > 0)
         {
             subList->add(list.pop());
         }
-        // cout << '!' << endl;
         subList = mergeSort(subList);
         while (subList->size() > 0)
         {
             list.add(subList->pop());
         }
+        delete subList;
+        globalIterator--;
     }
 
 private:
+    int globalIterator;
+
     T list;
 
     T * split(T * list);
@@ -69,6 +76,7 @@ T * AbstractList<T>::split(T * list)
 template <class T>
 T * AbstractList<T>::merge(T * firstList, T * secondList)
 {
+    globalIterator++;
     T * mergedList = new T();
     while (firstList->size() > 0 && secondList->size() > 0)
     {
@@ -89,12 +97,17 @@ T * AbstractList<T>::merge(T * firstList, T * secondList)
     {
         mergedList->copy(secondList);
     }
+    globalIterator--;
+    delete firstList;
+    globalIterator--;
+    delete secondList;
     return mergedList;
 }
 
 template <class T>
 T * AbstractList<T>::mergeSort(T * firstList)
 {
+    globalIterator++;
     T * secondList = split(firstList);
     if (firstList->size() > 1)
     {
@@ -103,6 +116,6 @@ T * AbstractList<T>::mergeSort(T * firstList)
     if (secondList->size() > 1)
     {
         secondList = mergeSort(secondList);
-    }    
+    }
     return merge(firstList, secondList);
 }

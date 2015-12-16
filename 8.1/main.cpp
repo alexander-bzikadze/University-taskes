@@ -31,5 +31,6 @@ int main()
     list.sort();
     cout << "Sorted List: ";
     list.print();
+    cout << "Number of lists: " << list.getGlobal() << endl;
     return 0;
 }
