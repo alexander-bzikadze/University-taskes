@@ -181,7 +181,7 @@ void Tree::Node::felicide(bool isRight)
     {
         currentNode = leftChild;
     }
-    if (currentNode->rigthChild != nullptr)
+    if (currentNode->rigthChild != nullptr && currentNode == rigthChild)
     {
         if (currentNode->rigthChild->leftChild != nullptr)
         {
@@ -199,7 +199,7 @@ void Tree::Node::felicide(bool isRight)
             currentNode->felicide(true);
         }
     }
-    else if (currentNode->leftChild != nullptr)
+    else if (currentNode->leftChild != nullptr && currentNode == leftChild)
     {
         if (currentNode->leftChild->rigthChild != nullptr)
         {

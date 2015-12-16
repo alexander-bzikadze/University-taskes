@@ -7,26 +7,8 @@ Greatings, my friend! Use the following commands:
 
 Enter a command.
 Enter the value.
-The entered value is 10.
-10 successfully added.
-
-Enter a command.
-Enter the value.
-The entered value is 15.
-15 successfully added.
-
-Enter a command.
-Enter the value.
-The entered value is 10.
-10 successfully deleted.
-
-Enter a command.
-Current tree consists of: 15.
-
-Enter a command.
-Enter the value.
-The entered value is 10.
-10 successfully added.
+The entered value is 4.
+4 successfully added.
 
 Enter a command.
 Enter the value.
@@ -35,8 +17,18 @@ The entered value is 2.
 
 Enter a command.
 Enter the value.
-The entered value is 4.
-4 successfully added.
+The entered value is 6.
+6 successfully added.
+
+Enter a command.
+Enter the value.
+The entered value is 1.
+1 successfully added.
+
+Enter a command.
+Enter the value.
+The entered value is 3.
+3 successfully added.
 
 Enter a command.
 Enter the value.
@@ -45,21 +37,27 @@ The entered value is 5.
 
 Enter a command.
 Enter the value.
-The entered value is 2.
-2 successfully added.
+The entered value is 7.
+7 successfully added.
 
 Enter a command.
-Enter the value.
-The entered value is 9.
-9 successfully added.
-
-Enter a command.
-Current tree consists of: 2 4 5 9 10 15.
+Current tree consists of: 1 2 3 4 5 6 7.
 
 Enter a command.
 Enter the value.
 The entered value is 4.
 4 successfully deleted.
+
+Enter a command.
+Current tree consists of: 1 2 3 5 6 7.
+
+Enter a command.
+Enter the value.
+The entered value is 2.
+2 successfully deleted.
+
+Enter a command.
+Current tree consists of: 1 3 5 6 7.
 
 Enter a command.
 Farewell, friend

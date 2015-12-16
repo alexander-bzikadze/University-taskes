@@ -46,7 +46,6 @@ bool Dialogue::mainProcess()
         commanding();
     }
     farewelling();
-    tree.~Tree();
     return false;
 }
 
