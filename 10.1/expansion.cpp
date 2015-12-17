@@ -1,11 +1,14 @@
 #include "expansion.h"
 
+using namespace std;
+
 Expansion::Expansion()
 {
     ifstream file("main.in");
     if (!file.is_open())
     {
         cout << "File!!!" << endl;
+        return;
     }
     file >> numberOfCities;
     cities.setSize(numberOfCities);
@@ -33,11 +36,6 @@ Expansion::Expansion()
 
 Expansion::~Expansion()
 {
-    // numberOfCities = 0;
-    // numberOfStates = 0;
-    // states[maxStates] = {};
-    // cities.~Graph();
-    // underControl[maxCities] = {};
 }
 
 void Expansion::showState(int number)
