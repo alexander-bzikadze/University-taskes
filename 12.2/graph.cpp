@@ -9,8 +9,6 @@ Graph::Graph()
 
 Graph::~Graph()
 {
-    // this->size = 0;
-    // table[maxSize][maxSize] = {};
 }
 
 void Graph::setSize(int size)

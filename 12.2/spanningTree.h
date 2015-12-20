@@ -15,7 +15,7 @@ public:
 
     void print();
 
-    int minRoad(int j);
+    int const minRoad(int j);
 private:
     bool allAreMarked() const;
 

@@ -40,7 +40,7 @@ void SpanningTree::print()
     }
 }
 
-int SpanningTree::minRoad(int j)
+int const SpanningTree::minRoad(int j)
 {
     int min = 0;
     for (int i = 0; i < graph.getSize(); ++i)
