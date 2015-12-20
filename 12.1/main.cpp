@@ -7,12 +7,13 @@ int main()
     if (!file.is_open())
     {
         cout << "File!" << endl;
+        return 1;
     }
     string mainString = "";
     string subString = "";
     file >> mainString;
     cin >> subString;
-    StringSearch search = StringSearch(mainString, subString);
+    StringSearch search(mainString, subString);
     cout << search.search() << endl;
     return 0;
 }
