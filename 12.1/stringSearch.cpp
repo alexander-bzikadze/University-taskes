@@ -1,4 +1,6 @@
 #include "stringSearch.h"
+#include <iostream>
+using namespace std;
 
 StringSearch::StringSearch(string mainString, string subString)
     : mainString(mainString), subString(subString)
@@ -7,9 +9,6 @@ StringSearch::StringSearch(string mainString, string subString)
 
 StringSearch::~StringSearch()
 {
-    // mainString = "";
-    // subString = "";
-    // array[maxSize] = {};
 }
 
 int StringSearch::search()
@@ -31,8 +30,8 @@ int StringSearch::search()
         array[i] = j;
         if (j == subString.size())
         {
-            result++;
+            return i - subString.size(); //because we've inserted '#'
         }
     }
-    return result;
+    return -1;
 }

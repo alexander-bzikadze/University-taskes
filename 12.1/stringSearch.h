@@ -1,21 +1,23 @@
 #pragma once
+
 #include <iostream>
 #include <string>
-using namespace std;
 
 class StringSearch
 {
 public:
-    StringSearch(string mainString, string subString);
+    StringSearch(std::string mainString, std::string subString);
 
     ~StringSearch();
 
+    ///Checks mainString for having subString in it, then returns the position of the first match
+    ///If match not found returns -1
     int search();
 
 private:
-    string mainString = "";
+    std::string mainString = "";
 
-    string subString = "";
+    std::string subString = "";
 
     int static const maxSize = 256;
 
