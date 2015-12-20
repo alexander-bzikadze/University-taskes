@@ -1,0 +1,16 @@
+Use one of the following commands:
+0 - exit;
+1 - enter new value;
+2 - delete a value;
+3 - print the list.
+Enter a command.
+Enter some value.
+The entered value is 2.
+Enter a command.
+Choose some value for deletion.
+You've chosen to delete 2.
+Successful deletion.
+Enter a command.
+Current list consists of:nothing.
+Enter a command.
+Farewell!
