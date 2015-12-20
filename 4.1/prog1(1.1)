@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int const maxSize = 32;
+
+int makeItBinary(short * binary, int decimal)
+{
+    int size = 0;
+    while (decimal > 0)
+    {
+        binary[size] = decimal & 1;
+        decimal >>= 1;
+        ++size;
+    }
+    return size;
+}
+
+void seeOut(short * array, int size)
+{
+    for ( int i = size - 1 ; i >= 0; --i)
+    {
+        cout << array[i] << ' ';
+    }
+    cout << endl;
+} 
+
+int main()
+{
+    int firstDec = 0;
+    int secondDec = 0;
+    short firstBin[maxSize] = {};
+    short secondBin[maxSize] = {};
+    cin >> firstDec >> secondDec;
+    cout << abs(secondDec) << end;
+    int firstSize = makeItBinary(firstBin, abs(firstDec));
+    int secondSize = makeItBinary(secondBin, abs(secondDec));
+    // seeOut(firstBin, firstSize);
+    // seeOut(secondBin, secondSize);
+}
