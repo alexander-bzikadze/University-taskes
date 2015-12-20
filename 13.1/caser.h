@@ -5,7 +5,7 @@
 class SuperString
 {
 public:
-    SuperString(const &std::string sentence);
+    SuperString(std::string const &sentence);
 
     // ~Caser()
     char pop();

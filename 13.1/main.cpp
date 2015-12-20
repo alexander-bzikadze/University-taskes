@@ -1,4 +1,5 @@
 #include "lexAnalyzer.h"
+#include <iostream>
 
 using namespace std;
 //erase(0, 1);
@@ -18,6 +19,7 @@ using namespace std;
 int main()
 {
     string subStr = "10473792";
+    std::cin >> subStr;
     LexAnalyzer check(subStr);
     if (check.mainProcess())
     {

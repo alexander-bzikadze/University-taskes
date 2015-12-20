@@ -2,7 +2,7 @@
 
 using namespace std;
 
-LexAnalyzer::LexAnalyzer(string sentence)
+LexAnalyzer::LexAnalyzer(string const &sentence)
     : sentence(sentence), command(0)
 {
 }
@@ -40,8 +40,12 @@ bool LexAnalyzer::mainProcess()
             }
             case 1:
             {
-                popDigits();
-                if (sentence.top() == '.')
+                if (isInputCorrect())
+                {
+                    sentence.pop();
+                    command = 1; 
+                }
+                else if (sentence.top() == '.')
                 {
                     command = 2;
                 }
@@ -64,17 +68,8 @@ bool LexAnalyzer::mainProcess()
                 sentence.pop();
                 if (isInputCorrect())
                 {
-                    popDigits();
-                    if (sentence.top() == 'E')
-                    {
-                        command = 3;
-                        break;
-                    }
-                    else if (!sentence.top())
-                    {
-                        command = 9;
-                        break;
-                    }
+                    command = 4;
+                    break;
                 }
                 command = 10;
                 break;
@@ -84,18 +79,64 @@ bool LexAnalyzer::mainProcess()
                 sentence.pop();
                 if (sentence.top() == '+' || sentence.top() == '-')
                 {
-                    sentence.pop();
+                    command = 5;
+                    break;
                 }
                 if (isInputCorrect())
                 {
-                    popDigits();
-                    if (!sentence.top())
-                    {
-                        command = 9;
-                        break;
-                    }
+                    command = 6;
+                    break;
                 }
                 command = 10;
+                break;
+            }
+            case 4:
+            {
+                if (isInputCorrect())
+                {
+                    sentence.pop();
+                    command = 1; 
+                }
+                else if (sentence.top() == 'E')
+                {
+                    command = 3;
+                }
+                else if (!sentence.top())
+                {
+                    command = 9;
+                }
+                else
+                {
+                    command = 10;
+                }
+                break;
+            }
+            case 5:
+            {
+                sentence.pop();
+                if (isInputCorrect())
+                {
+                    command = 6;
+                    break;
+                }
+                command = 10;
+                break;
+            }
+            case 6:
+            {
+                if (isInputCorrect())
+                {
+                    sentence.pop();
+                    command = 6;
+                }
+                else if (!sentence.top())
+                {
+                    command = 9;
+                }
+                else
+                {
+                    command = 10;
+                }
                 break;
             }
         }

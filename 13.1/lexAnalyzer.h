@@ -4,7 +4,7 @@
 class LexAnalyzer
 {
 public:
-    LexAnalyzer(std::string sentence);
+    LexAnalyzer(std::string const &sentence);
 
     bool mainProcess();
 

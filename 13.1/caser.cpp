@@ -2,7 +2,7 @@
 
 using namespace std;
 
-SuperString::SuperString(string sentence)
+SuperString::SuperString(string const &sentence)
      : sentence(sentence)
 {
 }
