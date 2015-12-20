@@ -12,14 +12,6 @@ bool LexAnalyzer::isInputCorrect() const
     return (sentence.top() <= '9' && sentence.top() >= '0');
 }
 
-void LexAnalyzer::popDigits()
-{
-    while (isInputCorrect())
-    {
-        sentence.pop();
-    }
-}
-
 bool LexAnalyzer::mainProcess()
 {
     while (command < 9)
