@@ -8,39 +8,46 @@ LexAnalyzer::LexAnalyzer(std::string const &sentence)
 
 bool LexAnalyzer::mainProcess()
 {
-    while (sentence.size() > 0 && currentStage < 5)
+    while (sentence.size() > 0 && currentStage < 7)
     {
-        while (currentStage == 1)
+        if (currentStage == 1)
         {
             currentStage = tableOfStages.getStage(letterAnalyzer(), currentStage - 1);
             sentence.erase(0, 1);
         }
-        while (currentStage == 2)
+        else if (currentStage == 2)
         {
             currentStage = tableOfStages.getStage(letterAnalyzer(), currentStage - 1);
             sentence.erase(0, 1);
         }
-        if (currentStage == 3) //For decoration of comments
+        else if (currentStage == 5) //For decoration of comments
         {
             cout << "/*";
+            currentStage = tableOfStages.getStage(letterAnalyzer(), currentStage - 1);
         }
-        while (currentStage == 3)
+        else if (currentStage == 3)
         {
             cout << sentence[0];
             currentStage = tableOfStages.getStage(letterAnalyzer(), currentStage - 1);
             sentence.erase(0, 1);
         }
-        while (currentStage == 4)
+        else if (currentStage == 4)
         {
             currentStage = tableOfStages.getStage(letterAnalyzer(), currentStage - 1);
             sentence.erase(0, 1);
         }
-        if (currentStage == 1) //For decoration of comments
+        else if (currentStage == 6) //For decoration of comments
         {
             cout << '/' << endl;
+            currentStage = tableOfStages.getStage(letterAnalyzer(), currentStage - 1);
         }
     }
-    return currentStage % 2;
+    if (currentStage == 6)
+    {        
+            cout << '/' << endl;
+            return 1;
+    }
+    return currentStage < 3;
 }
 
 unsigned short LexAnalyzer::letterAnalyzer()
