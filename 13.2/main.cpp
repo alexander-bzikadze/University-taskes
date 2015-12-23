@@ -13,6 +13,7 @@ int main()
         file >> buffer;
         sentence += ' ' + buffer;
     }
+    file.close();
     LexAnalyzer check(sentence);
     if (check.mainProcess()) 
     {
