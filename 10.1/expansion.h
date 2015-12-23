@@ -3,7 +3,6 @@
 #include "list.h"
 #include "graph.h"
 #include <iostream>
-using namespace std;
 
 class Expansion
 {
