@@ -5,7 +5,7 @@
 class LexAnalyzer
 {
 public:
-    LexAnalyzer(std::string sentence);
+    LexAnalyzer(std::string const &sentence);
 
     ///Analyzes text for comments and prints them if found. 
     ///If there are mistakes with comments decoration returns 0, if not then 1.

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-LexAnalyzer::LexAnalyzer(std::string sentence)
+LexAnalyzer::LexAnalyzer(std::string const &sentence)
  : sentence(sentence), currentStage(1), tableOfStages()
 {}
 
