@@ -13,14 +13,14 @@ int main()
         file >> buffer;
         sentence += ' ' + buffer;
     }
-    LexAnanyzer check(sentence);
+    LexAnalyzer check(sentence);
     if (check.mainProcess()) 
     {
-        cout << "Reading Failed!" << endl;
+        cout << "Succesful Reading!" << endl;
     }
     else
     {
-        cout << "Succesful Reading!" << endl;
+        cout << "Reading Failed!" << endl;
     }
     return 0;
 }

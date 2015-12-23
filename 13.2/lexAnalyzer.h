@@ -2,11 +2,13 @@
 #include "stage.h"
 #include <iostream>
 
-class LexAnanyzer
+class LexAnalyzer
 {
 public:
-    LexAnanyzer(std::string sentence);
+    LexAnalyzer(std::string sentence);
 
+    ///Analyzes text for comments and prints them if found. 
+    ///If there are mistakes with comments decoration returns 0, if not then 1.
     bool mainProcess();
 
 private:
