@@ -10,36 +10,31 @@ bool LexAnalyzer::mainProcess()
 {
     while (sentence.size() > 0 && currentStage < 7)
     {
+        currentStage = tableOfStages.getStage(letterAnalyzer(), currentStage - 1);
         if (currentStage == 1)
         {
-            currentStage = tableOfStages.getStage(letterAnalyzer(), currentStage - 1);
             sentence.erase(0, 1);
         }
         else if (currentStage == 2)
         {
-            currentStage = tableOfStages.getStage(letterAnalyzer(), currentStage - 1);
             sentence.erase(0, 1);
         }
         else if (currentStage == 5) //For decoration of comments
         {
             cout << "/*";
-            currentStage = tableOfStages.getStage(letterAnalyzer(), currentStage - 1);
         }
         else if (currentStage == 3)
         {
-            cout << sentence[0];
-            currentStage = tableOfStages.getStage(letterAnalyzer(), currentStage - 1);
             sentence.erase(0, 1);
+            cout << sentence[0];
         }
         else if (currentStage == 4)
         {
-            currentStage = tableOfStages.getStage(letterAnalyzer(), currentStage - 1);
             sentence.erase(0, 1);
         }
         else if (currentStage == 6) //For decoration of comments
         {
             cout << '/' << endl;
-            currentStage = tableOfStages.getStage(letterAnalyzer(), currentStage - 1);
         }
     }
     if (currentStage == 6)
