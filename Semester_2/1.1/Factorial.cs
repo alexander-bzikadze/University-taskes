@@ -3,28 +3,32 @@ using System.Collections.Generic;
 
 namespace Factorial
 {
+    ///class that coints factorial
     class Factorial
     {
+        ///takes integer n from the console and prints n!
         static public void Main()
         {
             int n = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(CountFactorial(n));
         }
+
         static private bool[] GetSieve(int n)
         {
             bool[] sieve = new bool[n + 1];
-                for (int i = 2; i <= n; ++i)
+            for (int i = 2; i <= n; ++i)
+            {
+                if (!sieve[i])
                 {
-                    if (!sieve[i])
+                    for (int j = i * i; j <= n; j += i)
                     {
-                        for (int j = i * i; j <= n; j += i)
-                        {
-                            sieve[j] = true;
-                        }
+                        sieve[j] = true;
                     }
                 }
+            }
             return sieve;
         }
+
         static private List<Tuple<int, int>> Factorization(int n)
         {
             bool[] sieve = GetSieve(n);
@@ -45,6 +49,7 @@ namespace Factorial
             }
             return simpleWithItsExp;
         }
+
         static private int Exponentiation(int a, int exp)
         {
             int result = 1;
@@ -58,6 +63,7 @@ namespace Factorial
             }
             return result;
         }
+
         static private int CountFactorial(int n)
         {
             if (n < 0)
