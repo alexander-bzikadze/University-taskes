@@ -12,10 +12,10 @@ namespace Spiral
               {11, 12, 13, 14, 15},
               {16, 17, 18, 19, 20},
               {21, 22, 23, 24, 25}};
-              printFromTheInside(matrix);
-
+            PrintFromTheInside(matrix);
         }
-        private static void printFromTheInside(int[,] matrix)
+        
+        private static void PrintFromTheInside(int[,] matrix)
         {
             int center = matrix.GetLength(0) / 2;
             int i = center;
@@ -51,6 +51,7 @@ namespace Spiral
                     Console.Write(' ');
                 }
             }
+            Console.WriteLine();
         }
     }
 }
