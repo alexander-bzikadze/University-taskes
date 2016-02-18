@@ -1,3 +1,3 @@
 all:
-	mcs Fibonacci.cs
+	mcs Main.cs Fibonacci.cs
 	mono Fibonacci.exe
