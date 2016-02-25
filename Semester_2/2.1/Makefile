@@ -1,3 +1,3 @@
 all:
-	mcs Main.cs Stack.cs
+	mcs Main.cs ArrayStack.cs
 	mono Main.exe

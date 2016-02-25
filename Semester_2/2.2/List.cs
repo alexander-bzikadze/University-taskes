@@ -15,7 +15,15 @@ namespace List
         ///Deletes element with chosen value
         public void DeleteElement(int value)
         {
-            list.DeleteElement(value);
+            list.SetIteratorFirst();
+            while (!list.IsIteratorNull() && list.GetIteratorValue() != value)
+            {
+                list.MoveIteratorForward();
+            }
+            if (!list.IsIteratorNull())
+            {
+                list.DeleteElement();
+            }
         }
 
         ///Deletes first element and returns its value
@@ -23,7 +31,7 @@ namespace List
         {
             list.SetIteratorFirst();
             int value = list.GetIteratorValue();
-            list.DeleteElement(value);
+            list.DeleteElement();
             return value;
         }
 
