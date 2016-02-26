@@ -2,6 +2,12 @@ using System;
 
 namespace List
 {
+    ///Contains integer values, gets them with the "Add" method,
+    ///deletes element by value using "DeleteElement" method,
+    ///deletes first element with "Pop" method,
+    ///returns the first element with "Top",
+    ///searches for element by value with "Search",
+    ///prints the whole List with "Print" method.
     class List
     {
         private BasicArrayList list = new BasicArrayList();
