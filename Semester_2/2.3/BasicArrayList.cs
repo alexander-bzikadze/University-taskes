@@ -2,7 +2,9 @@ using  System;
 
 namespace HashTable
 {
-
+    ///Contains integer values, can get more of them with the "Add" method,
+    ///uses Iterator to point a needed element,
+    ///deletes selected with iterator element with "DeleteElement" method.
     class BasicArrayList
     {
 

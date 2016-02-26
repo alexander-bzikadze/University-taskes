@@ -2,6 +2,10 @@ using System;
 
 namespace HashTable
 {
+    ///Contains integer values, adds them with "Add" method,
+    ///"DeleteValue" deletes an element by value,
+    ///"Search" searches for an element by value,
+    ///"Print", finally, prints the whole HashTable. Amazing, isn't it?
     class HashTable
     {
         private static int hashConstant = 100;
@@ -17,7 +21,7 @@ namespace HashTable
             }
         }
 
-        private int HashFunction(int value)
+        private static int HashFunction(int value)
         {
             return (value % hashConstant);
         }
