@@ -1,8 +1,10 @@
 namespace Calculator
 {
+    ///Contains integer elements, "Push" adds them to the Stack
+    ///"Pop" deletes first element,
+    ///"Top" returns value of the first element.
     class Stack : IStack
     {
-
         private static int N = 100;
 
         private int[] list = new int[N];

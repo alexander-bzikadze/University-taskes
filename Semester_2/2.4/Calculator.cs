@@ -2,9 +2,12 @@ using System;
 
 namespace Calculator
 {
+    ///Calculates value using IStack object given in constructor,
+    ///"Push" addes new value to the Stack,
+    ///can Add, Subtract, Multiply, Divide last two element on the stack,
+    ///result returns the last element on the stack.
     class Calculator
     {
-
         ///Creats Calculator object using one of the IStack's realizations
         public Calculator(IStack stack)
         {
