@@ -18,6 +18,10 @@ namespace Calculator
         ///Pushes back current value
         public void Add(int value)
         {
+            if (end == N - 1)
+            {
+                return;
+            }
             list[++end] = value;
             if (begin == -1)
             {

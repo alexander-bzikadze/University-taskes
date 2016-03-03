@@ -7,20 +7,24 @@ namespace Calculator
         public static void Main()
         {
             IStack stack;
-            Console.WriteLine("Type 1 to use List or 0 to use Stack.");
+            Console.WriteLine("Type:\n -2 to use Stack on references;\n -1 to use List as an Stack;\n -0 to use Stack on an Array.");
             ushort command = Convert.ToUInt16(Console.ReadLine());
-            while (command > 1)
+            while (command > 2)
             {
                 Console.WriteLine("Wrong input! Try again.");
                 command = Convert.ToUInt16(Console.ReadLine());
             }
-            if (command == 1)
+            if (command == 2)
+            {
+                stack = new ReferenceStack();
+            }
+            else if (command == 1)
             {
                 stack = new List();
             }
             else
             {
-                stack = new Stack();
+                stack = new ArrayStack();
             }
             Calculator calc = new Calculator(stack);
 
