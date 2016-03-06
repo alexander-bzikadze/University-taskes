@@ -1,4 +1,3 @@
-
 all:
 	mcs HashTable.cs List.cs IHash.cs Hash1.cs Hash2.cs BasicArrayList.cs -target:library -out:HashTable.dll
 	mcs Main.cs -r:./HashTable.dll
