@@ -2,6 +2,8 @@ using System;
 
 namespace ReferenceStack
 {
+    ///Signals that one tried to get value from null reference
+    ///while working with stack.
     [Serializable]
     public class StackNullExeption : Exception
     {

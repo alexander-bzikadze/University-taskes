@@ -6,7 +6,7 @@ public class ConsoleMain
     public static void Main()
     {
         ReferenceStack.ReferenceStack stack =
-        new ReferenceStack.ReferenceStack();
+            new ReferenceStack.ReferenceStack();
         stack.Push(1);
         stack.Push(2);
         stack.Push(3);

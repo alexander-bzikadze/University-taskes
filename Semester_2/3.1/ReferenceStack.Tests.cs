@@ -8,7 +8,7 @@ namespace ReferenceStack
     {
         private ReferenceStack stack;
 
-        [Test]
+        [SetUp]
         public void Initialization()
         {
             stack = new ReferenceStack();
@@ -36,5 +36,24 @@ namespace ReferenceStack
         {
             stack.Pop();
         }
+
+        [Test]
+        public void HardTest()
+        {
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Pop();
+            Assert.AreEqual(2, stack.Top());
+            stack.Push(3);
+            stack.Push(4);
+            Assert.AreEqual(4, stack.Top());
+            Assert.AreEqual(4, stack.Pop());
+            Assert.AreEqual(3, stack.Pop());
+            Assert.AreEqual(2, stack.Pop());
+            Assert.AreEqual(1, stack.Top());
+            Assert.AreEqual(1, stack.Pop());
+        }
+
     }
 }
