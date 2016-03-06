@@ -2,23 +2,23 @@ using System;
 
 namespace HashTable
 {
-    ///Contains integer values, gets them with the "Add" method,
-    ///deletes element by value using "DeleteElement" method,
-    ///deletes first element with "Pop" method,
-    ///returns the first element with "Top",
-    ///searches for element by value with "Search",
-    ///prints the whole List with "Print" method.
+    /// Contains integer values, gets them with the "Add" method,
+    /// deletes element by value using "DeleteElement" method,
+    /// deletes first element with "Pop" method,
+    /// returns the first element with "Top",
+    /// searches for element by value with "Search",
+    /// prints the whole List with "Print" method.
     public class List
     {
         private BasicArrayList list = new BasicArrayList();
 
-        ///Adds new element to the list
+        /// Adds new element to the list
         public void Add(int value)
         {
             list.Add(value);
         }
 
-        ///Deletes element with chosen value
+        /// Deletes element with chosen value
         public void DeleteElement(int value)
         {
             list.SetIteratorFirst();
@@ -32,7 +32,7 @@ namespace HashTable
             }
         }
 
-        ///Deletes first element and returns its value
+        /// Deletes first element and returns its value
         public int Pop()
         {
             list.SetIteratorFirst();
@@ -41,14 +41,14 @@ namespace HashTable
             return value;
         }
 
-        ///Returns value of the first element
+        /// Returns value of the first element
         public int Top()
         {
             list.SetIteratorFirst();
             return list.GetIteratorValue();
         }
 
-        ///Prints the whole list
+        /// Prints the whole list
         public void Print()
         {
             list.SetIteratorFirst();
@@ -62,7 +62,7 @@ namespace HashTable
             list.SetIteratorFirst();
         }
 
-        ///Returns boolean value after searching for an element
+        /// Returns boolean value after searching for an element
         public bool Search(int value)
         {
             list.SetIteratorFirst();

@@ -2,9 +2,9 @@ using  System;
 
 namespace HashTable
 {
-    ///Contains integer values, can get more of them with the "Add" method,
-    ///uses Iterator to point a needed element,
-    ///deletes selected with iterator element with "DeleteElement" method.
+    /// Contains integer values, can get more of them with the "Add" method,
+    /// uses Iterator to point a needed element,
+    /// deletes selected with iterator element with "DeleteElement" method.
     public class BasicArrayList
     {
 
@@ -16,7 +16,7 @@ namespace HashTable
         private int begin = -1;
         private int end = -1;
 
-        ///Pushes back current value
+        /// Pushes back current value
         public void Add(int value)
         {
             list[++end] = value;
@@ -26,7 +26,7 @@ namespace HashTable
             }
         }
 
-        ///Searches for value and deletes it, if found
+        /// Searches for value and deletes it, if found
         public void DeleteElement()
         {
             for (int i = iterator; i < end; ++i)
@@ -43,25 +43,25 @@ namespace HashTable
             }
         }
 
-        ///Sets iterator 0
+        /// Sets iterator 0
         public void SetIteratorFirst()
         {
             iterator = 0;
         }
 
-        ///Increments iterator
+        /// Increments iterator
         public void MoveIteratorForward()
         {
             iterator++;
         }
 
-        ///Returns result of comparison of iterator to array size
+        /// Returns result of comparison of iterator to array size
         public bool IsIteratorNull()
         {
             return iterator == end + 1;
         }
 
-        ///Returns value, which iterator points on
+        /// Returns value, which iterator points on
         public int GetIteratorValue()
         {
             if (!IsIteratorNull())
@@ -74,6 +74,8 @@ namespace HashTable
             }
         }
     }
+
+    ///Signals if one tried to get value from the null reference while working with List.
     [Serializable]
     public class ListNullExeption : Exception
     {

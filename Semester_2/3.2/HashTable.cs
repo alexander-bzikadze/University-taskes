@@ -2,10 +2,10 @@ using System;
 
 namespace HashTable
 {
-    ///Contains integer values, adds them with "Add" method,
-    ///"DeleteValue" deletes an element by value,
-    ///"Search" searches for an element by value,
-    ///"Print", finally, prints the whole HashTable. Amazing, isn't it?
+    /// Contains integer values, adds them with "Add" method,
+    /// "DeleteValue" deletes an element by value,
+    /// "Search" searches for an element by value,
+    /// "Print", finally, prints the whole HashTable. Amazing, isn't it?
     public class HashTable
     {
         private IHash hash;
@@ -24,7 +24,7 @@ namespace HashTable
             }
         }
 
-        public int HashFunction(int value)
+        private int HashFunction(int value)
         {
             return hash.Func(value, hashConstant);
         }
