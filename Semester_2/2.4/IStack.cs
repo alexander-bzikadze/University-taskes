@@ -1,7 +1,7 @@
 namespace Calculator
 {
     ///Interface with virtual "Push", "Pop" and "Top" methods.
-    interface IStack
+    public interface IStack
     {
         ///adds inputted value to the Stack.
         void Push(int value);

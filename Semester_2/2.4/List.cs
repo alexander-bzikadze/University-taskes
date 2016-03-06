@@ -8,7 +8,7 @@ namespace Calculator
     ///returns the first element with "Top",
     ///searches for element by value with "Search",
     ///prints the whole List with "Print" method.
-    class List : IStack
+    public class List : IStack
     {
         private BasicArrayList list = new BasicArrayList();
 

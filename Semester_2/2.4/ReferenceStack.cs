@@ -3,7 +3,7 @@ namespace Calculator
     ///Contains integer elements, "Push" adds them to the Stack,
     ///"Pop" deletes first element,
     ///"Top" returns value of the first element.
-    class ReferenceStack : IStack
+    public class ReferenceStack : IStack
     {
         ///Contains integer value and reference to the next ReferenceStackElement,
         ///"GetValue" returns int value,
