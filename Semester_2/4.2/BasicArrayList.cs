@@ -17,7 +17,7 @@ namespace UniqueList
         {
             if (end == N - 1)
             {
-                throw new ListNullException("List is overloaded.");
+                throw new ListOverloadException("List is overloaded.");
             }
             list[++end] = value;
             if (begin == -1)

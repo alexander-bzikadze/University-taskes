@@ -28,7 +28,7 @@ namespace ArrayListTests
         }
 
         [Test]
-        [ExpectedException(typeof(ListNullException))]
+        [ExpectedException(typeof(ListOverloadException))]
         public void OverloadTest()
         {
             for (int i = 0; i < 101; ++i)

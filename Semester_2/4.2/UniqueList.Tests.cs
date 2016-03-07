@@ -36,17 +36,17 @@ namespace UniqueListTests
         }
 
         [Test]
-        [ExpectedException(typeof(ListNullException))]
+        [ExpectedException(typeof(ListOverloadException))]
         public void OverloadTest()
         {
             for (int i = 0; i < 101; ++i)
             {
-                list.Add(1);
+                list.Add(i);
             }
         }
 
         [Test]
-        [ExpectedException(typeof(ListNullException))]
+        [ExpectedException(typeof(UniqueListAddExisting))]
         public void DoubleAddTest()
         {
             list.Add(1);
@@ -54,7 +54,7 @@ namespace UniqueListTests
         }
 
         [Test]
-        [ExpectedException(typeof(ListNullException))]
+        [ExpectedException(typeof(UniqueListDeleteStrange))]
         public void DeleteStangeTest()
         {
             list.DeleteElement(1);
