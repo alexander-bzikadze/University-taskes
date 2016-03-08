@@ -8,5 +8,10 @@ namespace ParsingTree
         {
             return ParsingTreeConstructor.ConstructParsingTree(sentence).Result();
         }
+
+        public static void ParsingTreeViewer(String sentence)
+        {
+            ParsingTreeConstructor.ConstructParsingTree(sentence).Print();
+        }
     }
 }

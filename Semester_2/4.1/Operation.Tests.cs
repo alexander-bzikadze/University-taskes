@@ -83,12 +83,22 @@ namespace OperationTests
 
         [Test]
         [ExpectedException(typeof(OperationNullException))]
-        public void StandartNullTest()
+        public void StandartNullTest_1()
         {
             op = new Operation('+');
             // op.SetRight(new Operand(5));
             op.SetLeft(new Operand(5));
             Assert.AreEqual(10, op.Result());
+        }
+
+        [Test]
+        [ExpectedException(typeof(OperationNullException))]
+        public void StandartNullTest_2()
+        {
+            op = new Operation('+');
+            // op.SetRight(new Operand(5));
+            op.SetLeft(new Operand(5));
+            op.Print();
         }
 
         [Test]

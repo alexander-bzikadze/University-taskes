@@ -76,5 +76,16 @@ namespace ParsingTree
             value = result;
             return result;
         }
+
+        override public void Print()
+        {
+            if (left == null || right == null)
+            {
+                throw new OperationNullException();
+            }
+            Console.Write(" {0}", operation);
+            left.Print();
+            right.Print();
+        }
     }
 }

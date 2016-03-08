@@ -1,3 +1,5 @@
+using System;
+
 namespace ParsingTree
 {
     ///Operand class. Contains integer value and and its return method.
@@ -13,6 +15,11 @@ namespace ParsingTree
         virtual public int Result()
         {
             return value;
+        }
+
+        virtual public void Print()
+        {
+            Console.Write(" {0}", value);
         }
     }
 }

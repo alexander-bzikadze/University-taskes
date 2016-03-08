@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using ParsingTree;
 
-namespace OperandTests
+namespace ParsingTreeTests
 {
     [TestFixture]
     class ParsingTreeTests
@@ -35,13 +35,6 @@ namespace OperandTests
         public void CheckWentWrongThrowingExceptionTest_1()
         {
             ParsingTree.ParsingTree.ParsingTreeCounter("(27");
-        }
-
-        [Test]
-        [ExpectedException(typeof(WrongInputException))]
-        public void CheckWentWrongThrowingExceptionTest_2()
-        {
-            ParsingTree.ParsingTree.ParsingTreeCounter("(* (1");
         }
 
         [Test]
