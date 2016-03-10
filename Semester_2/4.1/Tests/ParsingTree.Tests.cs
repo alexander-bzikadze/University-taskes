@@ -38,10 +38,17 @@ namespace ParsingTreeTests
         }
 
         [Test]
-        [ExpectedException(typeof(WrongInputException))]
+        [ExpectedException(typeof(ConstructorFailException))]
         public void CheckWentWrongThrowingExceptionTest_2()
         {
             ParsingTree.ParsingTree.ParsingTreeCounter("(* (1");
+        }
+
+        [Test]
+        [ExpectedException(typeof(WrongInputException))]
+        public void CheckWentWrongThrowingExceptionTest_3()
+        {
+            ParsingTree.ParsingTree.ParsingTreeCounter("(2k");
         }
     }
 }

@@ -6,7 +6,7 @@ namespace ParsingTree
     /// and returns its head.
     public class ParsingTreeConstructor
     {
-        public static Operand ConstructParsingTree(String sentence)
+        public static IParsingTreeVertex ConstructParsingTree(String sentence)
         {
             bool ifDecimal = ifDecimalCheck(sentence);
             if (ifDecimal)
@@ -41,12 +41,11 @@ namespace ParsingTree
             return number;
         }
 
-        private static Operand WorkRealSentence(String sentence)
+        private static IParsingTreeVertex WorkRealSentence(String sentence)
         {
             int number = 0;
             ParsingStack stack = new ParsingStack();
-            CheckWentWrongThrowingException(sentence[1]);
-            Operation result = new Operation(sentence[1]);
+            Operation result = GetNeededOperation(sentence[1]);
             stack.Push(result);
             sentence = sentence.Remove(0, 3);
             while (sentence.Length != 0)
@@ -64,13 +63,15 @@ namespace ParsingTree
                 }
                 switch (sentence[0])
                 {
-                    case '(':
+                    case '+':
+                    case '-':
+                    case '*':
+                    case '/':
                     {
-                        CheckWentWrongThrowingException(sentence[1]);
-                        Operation pushed = new Operation(sentence[1]);
+                        Operation pushed = GetNeededOperation(sentence[0]);
                         AddChildToStackTop(stack.Top(), pushed);
                         stack.Push(pushed);
-                        sentence = sentence.Remove(0, 2);
+                        sentence = sentence.Remove(0, 1);
                         break;
                     }
                     case '0':
@@ -90,11 +91,16 @@ namespace ParsingTree
                         AddChildToStackTop(stack.Top(), added);
                         break;
                     }
+                    case '(':
                     case ')':
                     case ' ':
                     {
                         sentence = sentence.Remove(0, 1);
                         break;
+                    }
+                    default:
+                    {
+                        throw new WrongInputException("Unexpected character \"" + sentence[0] + '\n');
                     }
                 }
             }
@@ -109,7 +115,7 @@ namespace ParsingTree
             }
         }
 
-        private static void AddChildToStackTop(ParsingStackElement top, Operand added)
+        private static void AddChildToStackTop(ParsingStackElement top, IParsingTreeVertex added)
         {
             if (top.GetCount() == 0)
             {
@@ -128,6 +134,33 @@ namespace ParsingTree
                 simb != '-' &&
                 simb != '*' &&
                 simb != '/';
+        }
+
+        private static Operation GetNeededOperation(char simb)
+        {
+            switch (simb)
+            {
+                case '+':
+                {
+                    return new OperationAdd();
+                }
+                case '-':
+                {
+                    return new OperationSubtract();
+                }
+                case '*':
+                {
+                    return new OperationMultiply();
+                }
+                case '/':
+                {
+                    return new OperationDivide();
+                }
+                default:
+                {
+                    throw new WrongInputException("Unexpected character \"" + simb + '\"');
+                }
+            }
         }
     }
 }

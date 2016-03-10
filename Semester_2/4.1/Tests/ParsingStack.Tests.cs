@@ -17,10 +17,10 @@ namespace ParsingStackTests
         [Test]
         public void TripplePushAndPops()
         {
-            Operation op1 = new Operation('+');
+            Operation op1 = new OperationAdd();
             op1.SetLeft(new Operand(1));
             op1.SetRight(new Operand(1));
-            Operation op2 = new Operation('-');
+            Operation op2 = new OperationSubtract();
             op2.SetLeft(new Operand(1));
             op2.SetRight(new Operand(1));
             stack.Push(op1);
