@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 namespace Fold
 {
+    /// A static class that contains one static method that returnes int.
     public static class FoldClass
     {
+        /// Takes List<int>, int and Func<int, int, int> and returns int.
         static public int Fold(List<int> list, int first, 
 Func<int, int, int> f)
         {
