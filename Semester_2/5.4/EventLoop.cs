@@ -11,6 +11,10 @@ namespace ConsoleTravel
 
         public void Run()
         {
+            for (int i = 0; i < 10; ++i)
+            {
+                Console.WriteLine("Here u can travel.");
+            }
             while (true)
             {
                 var key = Console.ReadKey(true);
@@ -42,7 +46,8 @@ namespace ConsoleTravel
                     }
                     default:
                     {
-                        throw new WrongInputException("Wrong Input.");
+                        break;
+                        // throw new WrongInputException("Wrong Input.");
                     }
                 }
             }

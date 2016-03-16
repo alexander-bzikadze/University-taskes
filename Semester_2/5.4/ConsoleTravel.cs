@@ -12,7 +12,7 @@ namespace ConsoleTravel
             }
             catch(ArgumentOutOfRangeException)
             {
-                Console.WriteLine("Unable to go left.");
+                // Console.WriteLine("Unable to go left.");
             }
         }
         public void OnRight(object sender, EventArgs args)
@@ -23,7 +23,7 @@ namespace ConsoleTravel
             }
             catch(ArgumentOutOfRangeException)
             {
-                Console.WriteLine("Unable to go right.");
+                // Console.WriteLine("Unable to go right.");
             }
         }
         public void OnUp(object sender, EventArgs args)
@@ -34,7 +34,7 @@ namespace ConsoleTravel
             }
             catch(ArgumentOutOfRangeException)
             {
-                Console.WriteLine("Unable to go up.");
+                // Console.WriteLine("Unable to go up.");
             }
         }
         public void OnDown(object sender, EventArgs args)
@@ -45,7 +45,7 @@ namespace ConsoleTravel
             }
             catch(ArgumentOutOfRangeException)
             {
-                Console.WriteLine("Unable to go down.");
+                // Console.WriteLine("Unable to go down.");
             }
         }
     }
