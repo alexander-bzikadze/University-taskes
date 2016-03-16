@@ -4,6 +4,7 @@ namespace ConsoleTravel
 {
     public class EventLoop
     {
+        public event EventHandler<EventArgs> Start = (sender, args)=>{};
         public event EventHandler<EventArgs> LeftHandler = (sender, args)=>{};
         public event EventHandler<EventArgs> RightHandler = (sender, args)=>{};
         public event EventHandler<EventArgs> UpHandler = (sender, args)=>{};
@@ -11,10 +12,7 @@ namespace ConsoleTravel
 
         public void Run()
         {
-            for (int i = 0; i < 10; ++i)
-            {
-                Console.WriteLine("Here u can travel.");
-            }
+            Start(this, EventArgs.Empty);
             while (true)
             {
                 var key = Console.ReadKey(true);

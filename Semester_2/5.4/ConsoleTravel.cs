@@ -4,6 +4,19 @@ namespace ConsoleTravel
 {
     public class ConsoleTravel
     {
+        private Coordinates max = new Coordinates();
+
+        public void Start(object sender, EventArgs args)
+        {
+            Console.CursorTop = 0;
+            for (int i = 0; i < 10; ++i)
+            {
+                Console.WriteLine("Here u can travel.");
+            }
+            max = new Coordinates(Console.CursorTop - 1, 17);
+            Console.CursorTop -= 10;
+        }
+
         public void OnLeft(object sender, EventArgs args)
         {
             try
@@ -17,35 +30,23 @@ namespace ConsoleTravel
         }
         public void OnRight(object sender, EventArgs args)
         {
-            try
+            if (Console.CursorLeft != max.x)
             {
                 Console.CursorLeft++;
-            }
-            catch(ArgumentOutOfRangeException)
-            {
-                // Console.WriteLine("Unable to go right.");
             }
         }
         public void OnUp(object sender, EventArgs args)
         {
-            try
+            if (Console.CursorTop != max.y - 9)
             {
                 Console.CursorTop--;
-            }
-            catch(ArgumentOutOfRangeException)
-            {
-                // Console.WriteLine("Unable to go up.");
             }
         }
         public void OnDown(object sender, EventArgs args)
         {
-            try
+            if (Console.CursorTop != max.y)
             {
                 Console.CursorTop++;
-            }
-            catch(ArgumentOutOfRangeException)
-            {
-                // Console.WriteLine("Unable to go down.");
             }
         }
     }

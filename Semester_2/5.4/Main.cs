@@ -10,19 +10,21 @@ namespace ConsoleTravel
             var eventLoop = new EventLoop();
             var consoleTravel = new ConsoleTravel();
 
+            eventLoop.Start += consoleTravel.Start;
             eventLoop.LeftHandler += consoleTravel.OnLeft;
             eventLoop.RightHandler += consoleTravel.OnRight;
             eventLoop.UpHandler += consoleTravel.OnUp;
             eventLoop.DownHandler += consoleTravel.OnDown;
 
-            try
-            {
-                eventLoop.Run(); 
-            }
-            catch(WrongInputException)
-            {
-                Console.WriteLine("Wrong Input. Quiting.");
-            }
+            eventLoop.Run(); 
+            
+            // try
+            // {
+            // }
+            // catch(WrongInputException)
+            // {
+            //     Console.WriteLine("Wrong Input. Quiting.");
+            // }
         }
     }
 }
