@@ -2,6 +2,7 @@ using System;
 
 namespace ConsoleTravel
 {
+    /// Class with two int getable and setable properties.
     public class Coordinates
     {
         public int x {get; set;}

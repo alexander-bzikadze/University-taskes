@@ -2,8 +2,7 @@ using System;
 
 namespace ConsoleTravel
 {
-    /// Signals of a try to count Operation's value while 
-    /// one of it children is null.
+    /// Signals if wrong input was gotten.
     [Serializable]
     public class WrongInputException : Exception
     {

@@ -2,6 +2,7 @@ using System;
 
 namespace ConsoleTravel
 {
+    /// Class that gets input from user and sends signals.
     public class EventLoop
     {
         public event EventHandler<EventArgs> Start = (sender, args)=>{};
@@ -10,6 +11,8 @@ namespace ConsoleTravel
         public event EventHandler<EventArgs> UpHandler = (sender, args)=>{};
         public event EventHandler<EventArgs> DownHandler = (sender, args)=>{};
 
+        /// Converts Right, Left, Up and Down arrows and Q into signals.
+        /// If input is wrong, does not send any signal.
         public void Run()
         {
             Start(this, EventArgs.Empty);

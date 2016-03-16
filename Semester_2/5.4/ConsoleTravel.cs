@@ -2,19 +2,23 @@ using System;
 
 namespace ConsoleTravel
 {
+    /// Class of receiver of signals. Moves cursor depending on signals.
     public class ConsoleTravel
     {
         private Coordinates max = new Coordinates();
 
         public void Start(object sender, EventArgs args)
         {
+            int y = 10; //height of travel zone.
+            int x = 17; //length of "Here u can travel."
             Console.CursorTop = 0;
-            for (int i = 0; i < 10; ++i)
+            for (int i = 0; i < y; ++i)
             {
                 Console.WriteLine("Here u can travel.");
             }
-            max = new Coordinates(Console.CursorTop - 1, 17);
-            Console.CursorTop -= 10;
+            Console.WriteLine("Type 'Q' to quit.");
+            max = new Coordinates(Console.CursorTop - 1, x);
+            Console.CursorTop -= y;
         }
 
         public void OnLeft(object sender, EventArgs args)
