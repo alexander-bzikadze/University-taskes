@@ -48,7 +48,6 @@ namespace ConsoleTravel
                     default:
                     {
                         break;
-                        // throw new WrongInputException("Wrong Input.");
                     }
                 }
             }

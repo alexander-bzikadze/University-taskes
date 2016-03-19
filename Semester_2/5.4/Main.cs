@@ -16,15 +16,7 @@ namespace ConsoleTravel
             eventLoop.UpHandler += consoleTravel.OnUp;
             eventLoop.DownHandler += consoleTravel.OnDown;
 
-            eventLoop.Run(); 
-            
-            // try
-            // {
-            // }
-            // catch(WrongInputException)
-            // {
-            //     Console.WriteLine("Wrong Input. Quiting.");
-            // }
+            eventLoop.Run();
         }
     }
 }

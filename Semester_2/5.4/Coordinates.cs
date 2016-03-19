@@ -5,13 +5,13 @@ namespace ConsoleTravel
     /// Class with two int getable and setable properties.
     public class Coordinates
     {
-        public int x {get; set;}
-        public int y {get; set;}
+        public int X {get; set;}
+        public int Y {get; set;}
 
-        public Coordinates(int y = 0, int x = 0)
+        public Coordinates(int X = 0, int Y = 0)
         {
-            this.x = x;
-            this.y = y;
+            this.X = X;
+            this.Y = Y;
         }
     }
 }
