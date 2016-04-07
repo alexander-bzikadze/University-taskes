@@ -133,7 +133,7 @@ namespace Calculator
                 buttons[i] = AddButton("button_" + i.ToString(), i.ToString(), sizeOfButton,
                                                     new Point(40 * ((i - 1) % 3), 40 * ((i - 1) / 3 + 1)));
             }
-            buttons[0] = AddButton("button_1", 0.ToString(), sizeOfButton,
+            buttons[0] = AddButton("button_0", 0.ToString(), sizeOfButton,
                                                     new Point(40 * 1, 40 * 4));
 
             buttons[10] = AddButton("button_+", "+", sizeOfButton,
@@ -149,16 +149,16 @@ namespace Calculator
             buttons[15] = AddButton("button_=", "=", sizeOfButton,
                                                     new Point(40 * 2, 40 * 4));
 
-            buttons[0].Click += eventLoop.AddDigit_0;
-            buttons[1].Click += eventLoop.AddDigit_1;
-            buttons[2].Click += eventLoop.AddDigit_2;
-            buttons[3].Click += eventLoop.AddDigit_3;
-            buttons[4].Click += eventLoop.AddDigit_4;
-            buttons[5].Click += eventLoop.AddDigit_5;
-            buttons[6].Click += eventLoop.AddDigit_6;
-            buttons[7].Click += eventLoop.AddDigit_7;
-            buttons[8].Click += eventLoop.AddDigit_8;
-            buttons[9].Click += eventLoop.AddDigit_9;
+            buttons[0].Click += eventLoop.AddDigit;
+            buttons[1].Click += eventLoop.AddDigit;
+            buttons[2].Click += eventLoop.AddDigit;
+            buttons[3].Click += eventLoop.AddDigit;
+            buttons[4].Click += eventLoop.AddDigit;
+            buttons[5].Click += eventLoop.AddDigit;
+            buttons[6].Click += eventLoop.AddDigit;
+            buttons[7].Click += eventLoop.AddDigit;
+            buttons[8].Click += eventLoop.AddDigit;
+            buttons[9].Click += eventLoop.AddDigit;
 
             buttons[10].Click += eventLoop.AddAdd;
             buttons[11].Click += eventLoop.AddSubtract;
@@ -167,7 +167,7 @@ namespace Calculator
             buttons[14].Click += eventLoop.Delete;
             buttons[15].Click += eventLoop.AddEqual;
 
-            eventLoop.AddDigit += AddDigit;
+            eventLoop.AddDigitSlot += AddDigit;
             eventLoop.AddChar += AddChar;
             eventLoop.DeleteEvent += DeleteAll;
         }

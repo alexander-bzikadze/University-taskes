@@ -1,4 +1,5 @@
 using System;
+using System.Windows.Forms;
 
 namespace Calculator
 {
@@ -6,7 +7,7 @@ namespace Calculator
     public class EventLoop
     {
         /// Sends signals for AddDigit() in Calculator.
-        public event EventHandler<ButtonIntClickedArguments> AddDigit = (sender, args) => {};
+        public event EventHandler<ButtonIntClickedArguments> AddDigitSlot = (sender, args) => {};
 
         /// Sends signals for AddChar() in Calculator.
         public event EventHandler<ButtonCharClickedArguments> AddChar = (sender, args) => {};
@@ -15,54 +16,10 @@ namespace Calculator
         public event EventHandler<EventArgs> DeleteEvent = (sender, args) => {};
 
         /// List of functions that transform signals of calculator buttons into something useful.
-        public void AddDigit_0(object sender, EventArgs args)
+        public void AddDigit(object sender, EventArgs args)
         {
-            AddDigit(sender, new ButtonIntClickedArguments(0));
-        }
-
-        public void AddDigit_1(object sender, EventArgs args)
-        {
-            AddDigit(sender, new ButtonIntClickedArguments(1));
-        }
-
-        public void AddDigit_2(object sender, EventArgs args)
-        {
-            AddDigit(sender, new ButtonIntClickedArguments(2));
-        }
-
-        public void AddDigit_3(object sender, EventArgs args)
-        {
-            AddDigit(sender, new ButtonIntClickedArguments(3));
-        }
-
-        public void AddDigit_4(object sender, EventArgs args)
-        {
-            AddDigit(sender, new ButtonIntClickedArguments(4));
-        }
-
-        public void AddDigit_5(object sender, EventArgs args)
-        {
-            AddDigit(sender, new ButtonIntClickedArguments(5));
-        }
-
-        public void AddDigit_6(object sender, EventArgs args)
-        {
-            AddDigit(sender, new ButtonIntClickedArguments(6));
-        }
-
-        public void AddDigit_7(object sender, EventArgs args)
-        {
-            AddDigit(sender, new ButtonIntClickedArguments(7));
-        }
-
-        public void AddDigit_8(object sender, EventArgs args)
-        {
-            AddDigit(sender, new ButtonIntClickedArguments(8));
-        }
-
-        public void AddDigit_9(object sender, EventArgs args)
-        {
-            AddDigit(sender, new ButtonIntClickedArguments(9));
+            var button = sender as Button;
+            AddDigit(sender, new ButtonIntClickedArguments(ButtonToInt(button.Text)));
         }
 
         public void AddAdd(object sender, EventArgs args)
@@ -93,6 +50,11 @@ namespace Calculator
         public void Delete(object sender, EventArgs args)
         {
             DeleteEvent(sender, new EventArgs());
+        }
+
+        private int ButtonToInt(string text)
+        {
+            return (int)(text[text.Length - 1] - '0');
         }
     }
 }
