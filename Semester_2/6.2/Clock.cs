@@ -5,6 +5,7 @@ using System.Windows;
 
 namespace Clocks
 {
+	/// A class that describes form that shows current time.
 	public class Clocks : Form
 	{
 		private TableLayoutPanel space = null;
