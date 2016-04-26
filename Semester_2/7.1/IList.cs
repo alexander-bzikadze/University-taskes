@@ -3,19 +3,27 @@ using System.Collections.Generic;
 
 namespace List
 {
-	public interface IList<T> : IEnumerator<T>
+	/// Interface for a List.
+	/// Contains two properties - First and Last elements.
+	/// Contains Addition, Deletion void methodes.
+	/// Also contains boolean Search method.
+	/// Is enumerable.
+	/// Is T generic.
+	public interface IList<T> : IEnumerable<T>
 	{
+		/// Prefirst element in the List.
 		IListElement<T> First {get; set;}
+
+		/// Last element in the List.
 		IListElement<T> Last {get; set;}
-		IListElement<T> CurrentElement {get; set;}
-		T Current {get; set;}
 
+		/// Adds element to the end of the List.
 		void Add(T value);
-		void Delete(T value);
-		bool Search(T value);
 
-		bool MoveNext();
-		void Reset();
-		void Dispose();
+		/// Finds element by value and deletes it.
+		void Delete(T value);
+
+		/// Finds element by value and returns status of its existence.
+		bool Search(T value);
 	}
 }

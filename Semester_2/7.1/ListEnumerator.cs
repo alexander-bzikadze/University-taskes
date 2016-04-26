@@ -1,36 +1,56 @@
 using System;
+using System.Collections.Generic;
+
 
 namespace List
 {
-	// public class ListEnumerator<T> : IListEnumerator<T>
-	// {
-	// 	// public IListElement<T> First {get; set;}
+	/// Enumeration of a List.
+	/// Does not contain other methodes or properties,
+	/// not described in Interfaces.
+	public class ListEnumerator<T> : IEnumerator<T>
+	{
+		private IListElement<T> First {get;}
 
-	// 	// public IListElement<T> Current {get; set;}
+		private IListElement<T> _current;
 
-	// 	// public ListEnumerator(IListElement<T> First)
-	// 	// {
-	// 	// 	this.First = First;
-	// 	// }
+		public T Current
+		{
+			get
+			{
+				return _current.Value;
+			}
+		}
 
-	// 	// public bool MoveNext()
-	// 	// {
-	// 	// 	if (Current.Next != null)
-	// 	// 	{
-	// 	// 		Current = Current.Next;	
-	// 	// 		return true;
-	// 	// 	}
-	// 	// 	return false;
-	// 	// }
 
-	// 	// public void Reset()
-	// 	// {
-	// 	// 	Current = First;
-	// 	// }
+	    object System.Collections.IEnumerator.Current
+	    {
+	        get { return Current; }
+	    }
 
-	// 	// public void Dispose()
-	// 	// {
+		public ListEnumerator(IListElement<T> First)
+		{
+			this.First = First;
+			Reset();
+		}
 
-	// 	// }
-	// }
+		new public bool MoveNext()
+		{
+			if (_current.Next != null)
+			{
+				_current = _current.Next;	
+				return true;
+			}
+			return false;
+		}
+
+		new public void Reset()
+		{
+			_current = First;
+		}
+
+		void IDisposable.Dispose()
+		{
+
+		}
+	}
 }

@@ -1,56 +1,34 @@
 using System;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace List
 {
+	/// A class that realizes IList.
+	/// Is T generic.
+	/// Is enumerable.
+	/// Does not contained methodes and properties, not described in interfaces.
 	public class List<T> : IList<T> where T : IEquatable<T>
 	{
 		public List()
 		{
-			First = null;
+			First = new ListElement<T>();
 			Last = null;
-			CurrentElement = First;
 		}
 
+		/// Prefirst element in the list.
 		public IListElement<T> First {get; set;}
+
+		/// Last element in the list.
 		public IListElement<T> Last {get; set;}
 
-		public IListElement<T> CurrentElement {get; set;}
-
-		public T Current
-		{
-			get
-			{
-				return CurrentElement.Value;
-			}
-			set {}
-		}
-
-		public bool MoveNext()
-		{
-			if (CurrentElement.Next != null)
-			{
-				CurrentElement = CurrentElement.Next;	
-				return true;
-			}
-			return false;
-		}
-
-		public void Reset()
-		{
-			CurrentElement = First;
-		}
-
-		public void Dispose()
-		{
-
-		}
-
+		/// Adds element to the end of the list.
 		public void Add(T value)
 		{
-			if (First == null)
+			if (First.Next == null)
 			{
-				First = new ListElement<T>(value);
-				Last = First;
+				First.Next = new ListElement<T>(value);
+				Last = First.Next;
 			}
 			else 
 			{
@@ -59,38 +37,62 @@ namespace List
 			}
 		}
 
+		/// Finds element by value in the list.
+		/// If found, deletes it.
 		public void Delete(T value)
 		{
-			if (First != null)
+			if (First.Next != null)
 			{
-				if (First.Value.Equals(value))
+				if (First.Next.Value.Equals(value))
 				{
-					if (Last == First)
+					if (Last == First.Next)
 					{
 						Last = Last.Next;
 					}
-					First = First.Next;
+					First.Next = First.Next.Next;
 				}
-				var current = First;
-				while (current.Next != null && !current.Value.Equals(value))
+				else
 				{
-					current = current.Next;
-				}
-				if (current.Next != null)
-				{
-					current.Next = current.Next.Next;
+					var current = First.Next;
+					while (current.Next != null && !current.Next.Value.Equals(value))
+					{
+						current = current.Next;
+					}
+					if (current.Next != null)
+					{
+						if (current.Next == null)
+						{
+							Last = current;
+						}
+						current.Next = current.Next.Next;
+					}
 				}
 			}
 		}
 
+		/// Finds element by value in the list.
+		/// Returns true, if found.
+		/// If not, guess.
 		public bool Search(T value)
 		{
-			var current = First;
+			var current = First.Next;
 			while (current != null && !current.Value.Equals(value))
 			{
 				current = current.Next;
 			}
 			return current != null;
+		}
+
+		/// Needed method to IEnurable interface.
+	    IEnumerator IEnumerable.GetEnumerator()
+	    {
+	        return this.GetEnumerator();
+	    }
+
+	    /// Realization of GetEnumerator. Returns ListEnumerator, created with help of First.
+		public System.Collections.Generic.IEnumerator<T> GetEnumerator()
+		{
+			return new ListEnumerator<T>(First);
 		}
 	}
 }

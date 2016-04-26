@@ -2,6 +2,10 @@ using System;
 
 namespace List
 {
+	/// A class that realizes IListElement.
+	/// Does not contain methodes and properties,
+	/// not declared in Interface.
+	/// Contains two constructors.
 	public class ListElement<T> : IListElement<T>
 	{
 		public T Value {get;}
