@@ -8,7 +8,7 @@ namespace Set
 	/// If documentation needed, try IBinaryTree.
 	public class BinaryTree<T> : IBinaryTree<T> where T : IComparable<T>
 	{
-		public IBinaryTreeVertex<T> Root {get; set;}
+		private IBinaryTreeVertex Root {get; set;}
 
 		public BinaryTree()
 		{
@@ -16,19 +16,13 @@ namespace Set
 			Reset();
 		}
 
-		public BinaryTree(IBinaryTreeVertex<T> vertex)
-		{
-			this.Root = vertex;
-			Reset();
-		}
-
 		public BinaryTree(T value)
 		{
-			this.Root = new BinaryTreeVertex<T>(value);
+			this.Root = new BinaryTreeVertex(value);
 			Reset();
 		}
 
-		private IBinaryTreeVertex<T> Enumerator {get; set;}
+		private IBinaryTreeVertex Enumerator {get; set;}
 
 		public void Reset()
 		{
@@ -78,7 +72,7 @@ namespace Set
 			return Enumerator.Value;
 		}
 
-		public bool Add(IBinaryTreeVertex<T> vertex)
+		private bool Add(IBinaryTreeVertex vertex)
 		{
 			if (Root == null)
 			{
@@ -120,10 +114,10 @@ namespace Set
 
 		public bool Add(T value)
 		{
-			return Add(new BinaryTreeVertex<T>(value));
+			return Add(new BinaryTreeVertex(value));
 		}
 
-		private IBinaryTreeVertex<T> SearchForVertex(IBinaryTreeVertex<T> vertex)
+		private IBinaryTreeVertex SearchForVertex(IBinaryTreeVertex vertex)
 		{
 			var current = Root;
 			while (current != null && current.Value.CompareTo(vertex.Value) != 0)
@@ -140,12 +134,12 @@ namespace Set
 			return current;
 		}
 
-		private IBinaryTreeVertex<T> SearchForVertex(T value)
+		private IBinaryTreeVertex SearchForVertex(T value)
 		{
-			return SearchForVertex(new BinaryTreeVertex<T>(value));
+			return SearchForVertex(new BinaryTreeVertex(value));
 		}
 
-		public bool Delete(IBinaryTreeVertex<T> vertex)
+		private bool Delete(IBinaryTreeVertex vertex)
 		{
 			var deleted = SearchForVertex(vertex);
 			var current = deleted;
@@ -240,10 +234,10 @@ namespace Set
 
 		public bool Delete(T value)
 		{
-			return Delete(new BinaryTreeVertex<T>(value));
+			return Delete(new BinaryTreeVertex(value));
 		}
 
-		public bool Search(IBinaryTreeVertex<T> vertex)
+		private bool Search(IBinaryTreeVertex vertex)
 		{
 			return SearchForVertex(vertex) != null;
 		}
@@ -256,10 +250,9 @@ namespace Set
 		public void Print()
 		{
 			Print(Root);
-
 		}
 
-		private void Print(IBinaryTreeVertex<T> vertex, int level = 0)
+		private void Print(IBinaryTreeVertex vertex, int level = 0)
 		{
 			if (vertex == null)
 			{
@@ -276,5 +269,46 @@ namespace Set
 
 			Print(vertex.RightChild, level + 1);
 		}
+
+		/// Interface of a Vertex of IBinaryTree.
+		/// Contains four properties: T value and three nearest vertexes.
+		/// Is generic. T must be comparable.
+		private interface IBinaryTreeVertex
+		{
+			T Value {get; set;}
+			IBinaryTreeVertex Parent {get; set;}
+			IBinaryTreeVertex LeftChild {get; set;}
+			IBinaryTreeVertex RightChild {get; set;}
+		}
+
+		/// Class of a Vertex of BinaryTree. Heir to IBinaryTreeVertex.
+		/// BinaryTreeVertex does not contain any public methodes or properties, 
+		/// not described in IBinaryTreeVertex.
+		/// If documentation needed, try IBinaryTreeVertex.
+		private class BinaryTreeVertex : IBinaryTreeVertex
+		{
+			public BinaryTreeVertex()
+			{
+				this.Value = default(T);
+				this.Parent = null;
+				this.LeftChild = null;
+				this.RightChild = null;
+			}
+
+			public IBinaryTreeVertex Parent {get; set;}
+			public IBinaryTreeVertex LeftChild {get; set;}
+			public IBinaryTreeVertex RightChild {get; set;}
+			public T Value {get; set;}
+
+			public BinaryTreeVertex(T Value)
+			{
+				this.Value = Value;
+				this.Parent = null;
+				this.LeftChild = null;
+				this.RightChild = null;
+			}
+		}
+
+
 	}
 }
