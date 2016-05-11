@@ -84,18 +84,18 @@ namespace List
 		}
 
 		/// Needed method to IEnurable interface.
-	    IEnumerator IEnumerable.GetEnumerator()
-	    {
-	        return this.GetEnumerator();
-	    }
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return this.GetEnumerator();
+		}
 
-	    /// Realization of GetEnumerator. Returns ListEnumerator, created with help of First.
+		/// Realization of GetEnumerator. Returns ListEnumerator, created with help of First.
 		public System.Collections.Generic.IEnumerator<T> GetEnumerator()
 		{
 			return new ListEnumerator(First);
 		}
 
-			/// Enumeration of a List.
+		/// Enumeration of a List.
 		/// Does not contain other methodes or properties,
 		/// not described in Interfaces.
 		public class ListEnumerator : IEnumerator<T>
@@ -113,10 +113,10 @@ namespace List
 			}
 
 
-		    object System.Collections.IEnumerator.Current
-		    {
-		        get { return Current; }
-		    }
+			object System.Collections.IEnumerator.Current
+			{
+		 		get { return Current; }
+			}
 
 			public ListEnumerator(ListElement first)
 			{
@@ -145,7 +145,7 @@ namespace List
 			}
 		}
 
-			/// A class that realizes IListElement.
+		/// A class that realizes IListElement.
 		/// Does not contain methodes and properties,
 		/// not declared in Interface.
 		/// Contains two constructors.
