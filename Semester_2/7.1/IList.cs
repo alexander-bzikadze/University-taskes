@@ -11,12 +11,6 @@ namespace List
 	/// Is T generic.
 	public interface IList<T> : IEnumerable<T>
 	{
-		/// Prefirst element in the List.
-		IListElement<T> First {get; set;}
-
-		/// Last element in the List.
-		IListElement<T> Last {get; set;}
-
 		/// Adds element to the end of the List.
 		void Add(T value);
 

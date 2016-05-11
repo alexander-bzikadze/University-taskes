@@ -12,27 +12,27 @@ namespace List
 	{
 		public List()
 		{
-			First = new ListElement<T>();
+			First = new ListElement();
 			Last = null;
 		}
 
 		/// Prefirst element in the list.
-		public IListElement<T> First {get; set;}
+		private ListElement First {get; set;}
 
 		/// Last element in the list.
-		public IListElement<T> Last {get; set;}
+		private ListElement Last {get; set;}
 
 		/// Adds element to the end of the list.
 		public void Add(T value)
 		{
 			if (First.Next == null)
 			{
-				First.Next = new ListElement<T>(value);
+				First.Next = new ListElement(value);
 				Last = First.Next;
 			}
 			else 
 			{
-				Last.Next = new ListElement<T>(value);
+				Last.Next = new ListElement(value);
 				Last = Last.Next;
 			}
 		}
@@ -92,7 +92,79 @@ namespace List
 	    /// Realization of GetEnumerator. Returns ListEnumerator, created with help of First.
 		public System.Collections.Generic.IEnumerator<T> GetEnumerator()
 		{
-			return new ListEnumerator<T>(First);
+			return new ListEnumerator(First);
+		}
+
+			/// Enumeration of a List.
+		/// Does not contain other methodes or properties,
+		/// not described in Interfaces.
+		public class ListEnumerator : IEnumerator<T>
+		{
+			private ListElement First {get;}
+
+			private ListElement _current;
+
+			public T Current
+			{
+				get
+				{
+					return _current.Value;
+				}
+			}
+
+
+		    object System.Collections.IEnumerator.Current
+		    {
+		        get { return Current; }
+		    }
+
+			public ListEnumerator(ListElement first)
+			{
+				this.First = first;
+				Reset();
+			}
+
+			public bool MoveNext()
+			{
+				if (_current.Next != null)
+				{
+					_current = _current.Next;	
+					return true;
+				}
+				return false;
+			}
+
+			public void Reset()
+			{
+				_current = First;
+			}
+
+			void IDisposable.Dispose()
+			{
+
+			}
+		}
+
+			/// A class that realizes IListElement.
+		/// Does not contain methodes and properties,
+		/// not declared in Interface.
+		/// Contains two constructors.
+		public class ListElement
+		{
+			public T Value {get;}
+			public ListElement Next {get; set;}
+
+			public ListElement()
+			{
+				Value = default(T);
+				Next = null;
+			}
+
+			public ListElement(T value)
+			{
+				this.Value = value;
+				Next = null;
+			}
 		}
 	}
 }
