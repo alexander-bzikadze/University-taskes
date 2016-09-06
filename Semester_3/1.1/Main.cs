@@ -10,10 +10,12 @@ namespace BinaryTree
 			tree.Add(2);
 			tree.Add(1);
 			tree.Add(3);
-			var it = tree.GetEnumerator();
-			it.MoveNext();
-			it.MoveNext();
-			Console.WriteLine(it.Current);
+			using (var it = tree.GetEnumerator())
+			{	
+				it.MoveNext();
+				it.MoveNext();
+				Console.WriteLine(it.Current);
+			}
 		}
 	}
 }

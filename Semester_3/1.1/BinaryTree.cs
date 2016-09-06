@@ -78,11 +78,6 @@ namespace BinaryTree
 				tree.Deletion += DeletionCheck;
 			}
 
-			~BinaryTreeEnumerator()
-			{
-				tree.Deletion -= DeletionCheck;
-			}
-
 			public T Current
 			{
 				get
@@ -167,7 +162,7 @@ namespace BinaryTree
 
 			void IDisposable.Dispose()
 			{
-
+				tree.Deletion -= DeletionCheck;
 			}
 		}
 
@@ -247,16 +242,16 @@ namespace BinaryTree
 			return Add(new BinaryTreeVertex(value));
 		}
 
-		private IBinaryTreeVertex SearchForVertex(IBinaryTreeVertex vertex)
+		private IBinaryTreeVertex SearchForVertex(T value)
 		{
 			var current = Root;
-			while (current != null && current.Value.CompareTo(vertex.Value) != 0)
+			while (current != null && current.Value.CompareTo(value) != 0)
 			{
-				if (current.Value.CompareTo(vertex.Value) > 0)
+				if (current.Value.CompareTo(value) > 0)
 				{
 					current = current.LeftChild;
 				}
-				else if (current.Value.CompareTo(vertex.Value) < 0)
+				else if (current.Value.CompareTo(value) < 0)
 				{
 					current = current.RightChild;
 				}
@@ -264,9 +259,9 @@ namespace BinaryTree
 			return current;
 		}
 
-		private IBinaryTreeVertex SearchForVertex(T value)
+		private IBinaryTreeVertex SearchForVertex(IBinaryTreeVertex vertex)
 		{
-			return SearchForVertex(new BinaryTreeVertex(value));
+			return SearchForVertex(vertex.Value);
 		}
 
 		private bool Delete(IBinaryTreeVertex vertex)
