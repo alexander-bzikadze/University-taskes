@@ -7,7 +7,7 @@ namespace Net
 	/// Reads data from file "input.txt". Realization of IReader.
 	public class Reader : IReader
 	{
-		public Tuple<bool[,], Computer[], Os[], Virus[]> ReadFromFile()
+		public ReadResult ReadFromFile()
 		{
 			using (var file = new System.IO.StreamReader("input.txt"))
 			{
@@ -50,7 +50,7 @@ namespace Net
 					res.Item4[i] = new Virus(Convert.ToString(line[0]), PoisonChances);
 					res.Item2[Convert.ToInt64(line[line.Length - 1])].Virus = res.Item4[i];
 				}
-				return res;
+				return new ReadResult(res);
 			}
 		}
 	}

@@ -11,7 +11,7 @@ namespace Net
 		public static void MainProcess(IReader reader, IViewer viewer)
 		{
 			var input = reader.ReadFromFile();
-			var net = new Net(input.Item1, input.Item2);
+			var net = new Net(input.adjacencyMatrix, input.computers);
 			bool notAllPoisoned = false;
 			int iteration = 0;
 			while (!notAllPoisoned)

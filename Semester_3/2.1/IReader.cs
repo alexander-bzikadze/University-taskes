@@ -7,6 +7,7 @@ namespace Net
 	/// Interface for Reader of input data.
 	public interface IReader 
 	{
-		Tuple<bool[,], Computer[], Os[], Virus[]> ReadFromFile();
+		/// Reads data from file and returns ReadResualt object.
+		ReadResult ReadFromFile();
 	}
 }

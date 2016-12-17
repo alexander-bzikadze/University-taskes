@@ -776,7 +776,7 @@ Os - MacOs, virus - Steam.
 Os - Windows, virus - Trearch.
 Os - MacOs, virus - Steam.
 Os - Windows, virus - None.
-Os - Windows, virus - Trearch.
+Os - Windows, virus - None.
 
 Iteration number 60. Current Matrix:
 0 1 1 0 0 
@@ -789,7 +789,7 @@ Os - MacOs, virus - Steam.
 Os - Windows, virus - Trearch.
 Os - MacOs, virus - Steam.
 Os - Windows, virus - None.
-Os - Windows, virus - Trearch.
+Os - Windows, virus - None.
 
 Iteration number 61. Current Matrix:
 0 1 1 0 0 
@@ -802,7 +802,7 @@ Os - MacOs, virus - Steam.
 Os - Windows, virus - Trearch.
 Os - MacOs, virus - Steam.
 Os - Windows, virus - None.
-Os - Windows, virus - Trearch.
+Os - Windows, virus - None.
 
 Iteration number 62. Current Matrix:
 0 1 1 0 0 
@@ -815,7 +815,7 @@ Os - MacOs, virus - Steam.
 Os - Windows, virus - Trearch.
 Os - MacOs, virus - Steam.
 Os - Windows, virus - None.
-Os - Windows, virus - Trearch.
+Os - Windows, virus - None.
 
 Iteration number 63. Current Matrix:
 0 1 1 0 0 
@@ -828,7 +828,7 @@ Os - MacOs, virus - Steam.
 Os - Windows, virus - Trearch.
 Os - MacOs, virus - Steam.
 Os - Windows, virus - None.
-Os - Windows, virus - Trearch.
+Os - Windows, virus - None.
 
 Iteration number 64. Current Matrix:
 0 1 1 0 0 
@@ -841,7 +841,7 @@ Os - MacOs, virus - Steam.
 Os - Windows, virus - Trearch.
 Os - MacOs, virus - Steam.
 Os - Windows, virus - None.
-Os - Windows, virus - Trearch.
+Os - Windows, virus - None.
 
 Iteration number 65. Current Matrix:
 0 1 1 0 0 
@@ -854,7 +854,7 @@ Os - MacOs, virus - Steam.
 Os - Windows, virus - Trearch.
 Os - MacOs, virus - Steam.
 Os - Windows, virus - None.
-Os - Windows, virus - Trearch.
+Os - Windows, virus - None.
 
 Iteration number 66. Current Matrix:
 0 1 1 0 0 
@@ -867,7 +867,7 @@ Os - MacOs, virus - Steam.
 Os - Windows, virus - Trearch.
 Os - MacOs, virus - Steam.
 Os - Windows, virus - None.
-Os - Windows, virus - Trearch.
+Os - Windows, virus - None.
 
 Iteration number 67. Current Matrix:
 0 1 1 0 0 
@@ -880,7 +880,7 @@ Os - MacOs, virus - Steam.
 Os - Windows, virus - Trearch.
 Os - MacOs, virus - Steam.
 Os - Windows, virus - None.
-Os - Windows, virus - Trearch.
+Os - Windows, virus - None.
 
 Iteration number 68. Current Matrix:
 0 1 1 0 0 
@@ -893,7 +893,7 @@ Os - MacOs, virus - Steam.
 Os - Windows, virus - Trearch.
 Os - MacOs, virus - Steam.
 Os - Windows, virus - None.
-Os - Windows, virus - Trearch.
+Os - Windows, virus - None.
 
 Iteration number 69. Current Matrix:
 0 1 1 0 0 
@@ -906,7 +906,7 @@ Os - MacOs, virus - Steam.
 Os - Windows, virus - Trearch.
 Os - MacOs, virus - Steam.
 Os - Windows, virus - None.
-Os - Windows, virus - Trearch.
+Os - Windows, virus - None.
 
 Iteration number 70. Current Matrix:
 0 1 1 0 0 
@@ -919,7 +919,7 @@ Os - MacOs, virus - Steam.
 Os - Windows, virus - Trearch.
 Os - MacOs, virus - Steam.
 Os - Windows, virus - None.
-Os - Windows, virus - Trearch.
+Os - Windows, virus - None.
 
 Iteration number 71. Current Matrix:
 0 1 1 0 0 
@@ -4081,6 +4081,409 @@ Os - Windows, virus - None.
 Os - Windows, virus - Trearch.
 
 Iteration number 314. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 315. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 316. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 317. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 318. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 319. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 320. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 321. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 322. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 323. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 324. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 325. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 326. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 327. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 328. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 329. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 330. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 331. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 332. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 333. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 334. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 335. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 336. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 337. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 338. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 339. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 340. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 341. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 342. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 343. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 344. Current Matrix:
+0 1 1 0 0 
+1 0 0 0 1 
+1 0 0 1 0 
+0 0 1 0 0 
+0 1 0 0 0 
+Current computers status:
+Os - MacOs, virus - Steam.
+Os - Windows, virus - Trearch.
+Os - MacOs, virus - Steam.
+Os - Windows, virus - None.
+Os - Windows, virus - Trearch.
+
+Iteration number 345. Current Matrix:
 0 1 1 0 0 
 1 0 0 0 1 
 1 0 0 1 0 
