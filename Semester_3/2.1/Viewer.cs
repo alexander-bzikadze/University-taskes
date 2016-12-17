@@ -8,7 +8,7 @@ namespace Net
 	/// Input information is Net and number of iteration.
 	public class Viewer : IViewer
 	{
-		public void View(Net net, int iteration)
+		public void View(Net net, ulong iteration)
 		{
 			Console.WriteLine("Iteration number {0}. Current Matrix:", iteration);
 			for (int i = 0; i < net.Matrix.GetLength(0); ++i)
