@@ -24,9 +24,36 @@ namespace Net
 		/// Returns true if os got poisoned.
 		public bool PoisonAttempt(Virus virus)
 		{
-			var rnd = new Random();
+			var rnd = RandomSingleton.Instance();
 			var chance = rnd.NextDouble();
 			return chance > virus.Poison(this.Name);
+		}
+
+		private class RandomSingleton
+		{
+			private RandomSingleton()
+			{
+				random = new Random();
+			}
+
+			public static RandomSingleton Instance()
+			{
+				if (isInstanced == false)
+				{
+					isInstanced = true;
+					instancedRandom = new RandomSingleton();
+				}
+				return instancedRandom;
+			}
+
+			public double NextDouble()
+			{
+				return random.NextDouble();
+			}
+
+			private static bool isInstanced = false;
+			private Random random;
+			private static RandomSingleton instancedRandom;
 		}
 	}
 }
