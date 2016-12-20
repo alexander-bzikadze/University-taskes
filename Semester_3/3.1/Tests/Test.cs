@@ -8,82 +8,89 @@ namespace RobotsTests
 	public class NetTests
 	{
 		[Test]
-		public void Test1()
+		public void ThreeVertexRobotsInFirstInSecond()
 		{
 			Assert.IsFalse((Logic.MainProcess(new FileReader("Tests/inputTest1.txt"))));
 		}
 
 		[Test]
-		public void Test2()
+		public void RandomTest()
 		{
 			Assert.IsFalse((Logic.MainProcess(new FileReader("Tests/inputTest2.txt"))));
 		}
 		
-		/// Odd cycle
 		[Test]
-		public void Test3()
+		public void TestWithOddCycle()
 		{
 			Assert.IsTrue((Logic.MainProcess(new FileReader("Tests/inputTest3.txt"))));
 		}
 
 		[Test]
-		public void Test4()
+		public void ThreeVertexRobotsInFirstInThird()
 		{
 			Assert.IsTrue((Logic.MainProcess(new FileReader("Tests/inputTest4.txt"))));
 		}
 		
 		[Test]
-		public void Test5()
+		public void OneRobotInGraph()
 		{
 			Assert.IsFalse((Logic.MainProcess(new FileReader("Tests/inputTest5.txt"))));
 		}
 		
-		/// Wrong edge input
 		[Test]
-		[ExpectedException(typeof(Robots.FileReader.WrongArgument))]
-		public void Test6()
+		public void WronEdgeParams()
 		{
-			Logic.MainProcess(new FileReader("Tests/inputTest6.txt"));
+		    Assert.IsTrue(SpecAssert<Robots.FileReader.WrongArgument>.LogicMainProcessAssert("Tests/inputTest6.txt"));
 		}
 	
-		/// Wrong number of robots in their line	
 		[Test]
-		[ExpectedException(typeof(Robots.FileReader.WrongArgument))]
-		public void Test7()
+		public void RobotSetOutOfRangeOfVertexes_greater()
 		{
-			Logic.MainProcess(new FileReader("Tests/inputTest7.txt"));
+			Assert.IsTrue(SpecAssert<Robots.FileReader.WrongArgument>.LogicMainProcessAssert("Tests/inputTest7.txt"));
 		}
 		
-		/// Vertex index lesser then 1
 		[Test]
-		[ExpectedException(typeof(Robots.FileReader.WrongArgument))]
-		public void Test8()
+		public void RobotSetOutOfRangeOfVertexes_less()
 		{
-			Logic.MainProcess(new FileReader("Tests/inputTest8.txt"));
+			Assert.IsTrue(SpecAssert<Robots.FileReader.WrongArgument>.LogicMainProcessAssert("Tests/inputTest8.txt"));
 		}
 		
-		/// Vertex index greater then vertex number
 		[Test]
-		[ExpectedException(typeof(Robots.FileReader.WrongArgument))]
-		public void Test9()
+		public void RobotSetOutOfRangeOfVertexes_min_greater()
 		{
-			Logic.MainProcess(new FileReader("Tests/inputTest9.txt"));
+			Assert.IsTrue(SpecAssert<Robots.FileReader.WrongArgument>.LogicMainProcessAssert("Tests/inputTest9.txt"));
 		}
 		
-		/// Adding two robots to one vertex
 		[Test]
-		[ExpectedException(typeof(Robots.FileReader.WrongArgument))]
-		public void Test10()
+		public void EmptyGraph()
 		{
-			Logic.MainProcess(new FileReader("Tests/inputTest10.txt"));
+			Assert.IsTrue(SpecAssert<Robots.FileReader.WrongArgument>.LogicMainProcessAssert("Tests/inputTest10.txt"));
 		}
-		
-		/// Graph is not connected
+
 		[Test]
-		[ExpectedException(typeof(Robots.Logic.WrongArgument))]
-		public void Test11()
+		public void NotConnectedGraph()
 		{
-			Logic.MainProcess(new FileReader("Tests/inputTest11.txt"));
+			Assert.IsTrue(SpecAssert<Robots.Logic.WrongArgument>.LogicMainProcessAssert("Tests/inputTest11.txt"));
+		}
+
+		private class SpecAssert<T> where T : Exception
+		{
+			public static bool LogicMainProcessAssert(string filename)
+			{
+				try
+				{
+					Logic.MainProcess(new FileReader(filename));
+				}
+				catch (T)
+				{
+					return true;
+				}
+				catch (Exception)
+				{
+					return false;
+				}
+				return false;
+			}
 		}
 	}
 }

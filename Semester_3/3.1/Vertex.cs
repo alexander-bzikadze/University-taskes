@@ -7,6 +7,7 @@ namespace Robots
 	/// Contains all vertexes, that are connected to this one.
 	public class Vertex
 	{
+		/// Default constructor.
 		public Vertex()
 		{
 			this.Connections = new List<Vertex>();
@@ -19,7 +20,10 @@ namespace Robots
 			Connections.Add(connected);
 		}
 
+		/// List of adjacent vertexes.
 		public List<Vertex> Connections { get; private set; }
-		public ulong Number;
+
+		/// Number of current vertex in graph.
+		public ulong Number { get; set; }
 	}
 }

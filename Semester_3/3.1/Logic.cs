@@ -45,6 +45,7 @@ namespace Robots
 			return firstColorNumber != 1 && secondColorNumber != 1;
 		}
 
+		/// Is thrown if input argument is logically wrong.
 		public class WrongArgument : Exception
 		{
 			public WrongArgument() { }
@@ -58,6 +59,7 @@ namespace Robots
 			base(info, context) { }
 		}
 
+		/// Is thrown if switch case reached logically wrong case.
 		public class UnexpectedSwitchCase : Exception
 		{
 			public UnexpectedSwitchCase() { }

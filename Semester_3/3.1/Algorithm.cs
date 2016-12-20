@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Robots
 {
-	/// Static class, that provides a range of static methodes - implementation of algorithms.
+	/// Static class that provides a range of static methods - implementation of algorithms.
 	public static class Algorithm
 	{
 		/// Enum, used to color the graph.
@@ -46,8 +46,44 @@ namespace Robots
 			}
 			foreach (var nextVertex in vertex.Connections)
 			{
-				Dfs(nextVertex, 3 - currentColor, colors);
+				Dfs(nextVertex, changeColor(currentColor), colors);
 			}
 		}
-	}
+
+		private static Color changeColor(Color currentColor)
+		{
+			switch (currentColor)
+			{
+				case Color.noColor:
+				{
+					throw new UnexpectedSwitchCase("Cannot change noColor");
+				}
+				case Color.firstColor:
+				{
+					return Color.secondColor;
+				}
+				case Color.secondColor:
+				{
+					return Color.firstColor;
+				}
+				default:
+				{
+					throw new UnexpectedSwitchCase("Unknown color given.");
+				}
+			}
+		}
+
+		/// Is thrown if switch case reached logically wrong case.
+		public class UnexpectedSwitchCase : Exception
+		{
+			public UnexpectedSwitchCase() { }
+			public UnexpectedSwitchCase(string message) : base(message) { }
+			public UnexpectedSwitchCase(string message, Exception inner) : 
+			base(message, inner) { }
+
+			protected UnexpectedSwitchCase(
+				System.Runtime.Serialization.SerializationInfo info,
+				System.Runtime.Serialization.StreamingContext context) :
+			base(info, context) { }
+		}	}
 }

@@ -5,6 +5,7 @@ namespace Robots
 	/// Implementation of IReader. Reads from file.
 	public class FileReader : IReader
 	{
+		/// Constructor that takes string - name of the file that shall be read.
 		public FileReader(String filename = "input.txt")
 		{
 			this.filename = filename;
@@ -18,12 +19,12 @@ namespace Robots
 			using (var file = new System.IO.StreamReader(this.filename))
 			{
 				var line = file.ReadLine().Split(' ');
-				ulong VertexNumber = Convert.ToUInt64(line[0]);
-				ulong EdgeNumber = Convert.ToUInt64(line[1]);
-				ulong RobotsNumber = Convert.ToUInt64(line[2]);
-				Graph graph = new Graph(VertexNumber);
-				bool[] isRobotThere = new bool[VertexNumber];
-				for (ulong i = 0; i < EdgeNumber; ++i)
+				ulong vertexNumber = Convert.ToUInt64(line[0]);
+				ulong edgeNumber = Convert.ToUInt64(line[1]);
+				ulong robotsNumber = Convert.ToUInt64(line[2]);
+				Graph graph = new Graph(vertexNumber);
+				bool[] isRobotThere = new bool[vertexNumber];
+				for (ulong i = 0; i < edgeNumber; ++i)
 				{
 					line = file.ReadLine().Split(' ');
 					if (line.Length != 2)
@@ -32,22 +33,26 @@ namespace Robots
 					}
 					ulong vertex1 = Convert.ToUInt64(line[0]);
 					ulong vertex2 = Convert.ToUInt64(line[1]);
+					if (vertex1 == vertex2)
+					{
+						throw new WrongArgument("Cannot add loop.");
+					}
 					vertex1--;
 					vertex2--;
 					graph.AddEdge(vertex1, vertex2);
 				}
-				if (RobotsNumber != 0)
+				if (robotsNumber != 0)
 				{
 					line = file.ReadLine().Split(' ');
-					if (Convert.ToUInt64(line.Length) != RobotsNumber)
+					if (Convert.ToUInt64(line.Length) != robotsNumber)
 					// Yes, Length is for some reason int. And it cannot be compared to ulong.
 					// God knows why it is not uint.
 					{
 						throw new WrongArgument("Wrong robots number given.");
 					}
-					for (ulong i = 0; i < RobotsNumber; ++i)
+					for (ulong i = 0; i < robotsNumber; ++i)
 					{
-						if (Convert.ToUInt64(line[i]) > VertexNumber || Convert.ToInt64(line[i]) < 1)
+						if (Convert.ToUInt64(line[i]) > vertexNumber || Convert.ToInt64(line[i]) < 1)
 						{
 							throw new WrongArgument("Wrong vertex number. Given value is outside array range.");
 						}
