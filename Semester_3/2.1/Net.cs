@@ -7,15 +7,17 @@ namespace Net
 	/// Class that describes net of the computers in terms of a graph and list of computers.
 	public class Net
 	{
+		/// Standart constructor.
 		public Net()
 		{
 			this.Matrix = null;
 			this.Comps = null;
 		}
 
-		public Net(bool[,] Matrix, Computer[] comps)
+		/// Constructor, that defines matrix and comps.
+		public Net(bool[,] matrix, Computer[] comps)
 		{
-			this.Matrix = Matrix;
+			this.Matrix = matrix;
 			this.Comps = comps;
 		}
 

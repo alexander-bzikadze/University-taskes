@@ -7,11 +7,13 @@ namespace Net
 	/// Os for the computer. Contains its name.
 	public class Os
 	{
+		/// Standart constructor.
 		public Os()
 		{
 			this.Name = null;
 		}
 
+		/// Constructor that defines name.
 		public Os(String name)
 		{
 			this.Name = name;
@@ -38,7 +40,7 @@ namespace Net
 
 			public static RandomSingleton Instance()
 			{
-				if (isInstanced == false)
+				if (!isInstanced)
 				{
 					isInstanced = true;
 					instancedRandom = new RandomSingleton();

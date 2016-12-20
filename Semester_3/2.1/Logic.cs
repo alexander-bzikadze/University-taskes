@@ -8,6 +8,7 @@ namespace Net
 	/// Requirs IReader, IViewer objects to control input/output.
 	static public class Logic
 	{
+		/// Launches net poisoning process until all computers are not poisoned.
 		public static ulong MainProcess(IReader reader, IViewer viewer)
 		{
 			var input = reader.ReadFromFile();
@@ -17,11 +18,15 @@ namespace Net
 			{
 				viewer.View(net, iteration++);
 			}
+			viewer.View(net, iteration++);
 			return iteration;
 		}
 
+		/// Iterates one time. Tries to spread viruses from poisoned computers.
+		/// Returns true if all computers are poisoned.
 		public static bool Iteration(Net net)
 		{
+			Net new_net = net;
 			bool notAllPoisoned = true;
 			for (int i = 0; i < net.Matrix.GetLength(0); ++i)
 			{
@@ -37,7 +42,7 @@ namespace Net
 						{
 							if (!net.Comps[j].isPoisoned())
 							{
-								net.Comps[j].Poison(net.Comps[i].Virus);
+								new_net.Comps[j].Poison(net.Comps[i].Virus);
 							}
 						}
 					}
@@ -47,6 +52,7 @@ namespace Net
 					notAllPoisoned = false;
 				}
 			}
+			net = new_net;
 			return notAllPoisoned;
 		}
 	}

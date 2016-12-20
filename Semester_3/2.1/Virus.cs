@@ -7,12 +7,14 @@ namespace Net
 	/// Class for virus. Contains its name and list of oses and chances of poisoning them.
 	public class Virus
 	{
+		/// Standart constructor
 		public Virus()
 		{
 			this.Name = "None";
 			this.risks = null;
 		}
 
+		/// Constructor that defines name and risks.
 		public Virus(String name, Tuple<String, Double>[] risks)
 		{
 			this.Name = name;

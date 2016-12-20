@@ -7,18 +7,19 @@ namespace Net
 	/// Reads data from file "input.txt". Realization of IReader.
 	public class Reader : IReader
 	{
+		/// Read net from file.
 		public ReadResult ReadFromFile()
 		{
 			using (var file = new System.IO.StreamReader("input.txt"))
 			{
 				var firstLine = file.ReadLine().Split(' ');
-				long ComputerNumber = Convert.ToInt64(firstLine[0]);
-				long OsNumber = Convert.ToInt64(firstLine[1]);
-				long VirusNumber = Convert.ToInt64(firstLine[2]);
-				var res = new Tuple<bool[,], Computer[], Os[], Virus[]>(new bool[ComputerNumber, ComputerNumber], 
-						new Computer[ComputerNumber], new Os[OsNumber], new Virus[VirusNumber]);
+				long computerNumber = Convert.ToInt64(firstLine[0]);
+				long osNumber = Convert.ToInt64(firstLine[1]);
+				long virusNumber = Convert.ToInt64(firstLine[2]);
+				var res = new Tuple<bool[,], Computer[], Os[], Virus[]>(new bool[computerNumber, computerNumber], 
+						new Computer[computerNumber], new Os[osNumber], new Virus[virusNumber]);
 
-				for (int i = 0; i < ComputerNumber; ++i)
+				for (int i = 0; i < computerNumber; ++i)
 				{
 					var line = file.ReadLine().Split(' ');
 					int j = 0;
@@ -29,7 +30,7 @@ namespace Net
 					}
 				}
 
-				for (int i = 0; i < OsNumber; ++i)
+				for (int i = 0; i < osNumber; ++i)
 				{
 					var line = file.ReadLine().Split(' ');
 					res.Item3[i] = new Os(Convert.ToString(line[0]));
@@ -39,11 +40,11 @@ namespace Net
 					}
 				}
 
-				for (int i = 0; i < VirusNumber; ++i)
+				for (int i = 0; i < virusNumber; ++i)
 				{
 					var line = file.ReadLine().Split(' ');
-					var PoisonChances = new Tuple<String, Double>[OsNumber];
-					for (int j = 1; j < OsNumber + 1; ++j)
+					var PoisonChances = new Tuple<String, Double>[osNumber];
+					for (int j = 1; j < osNumber + 1; ++j)
 					{
 						PoisonChances[j - 1] = new Tuple<String, Double>(res.Item3[j - 1].Name, Convert.ToDouble(line[j]));
 					}
