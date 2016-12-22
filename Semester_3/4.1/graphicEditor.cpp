@@ -5,7 +5,6 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsObject>
 
-#include <iostream>
 #include "addLineCommand.hpp"
 #include "deleteLineCommand.hpp"
 #include "moveLineCommand.hpp"
