@@ -48,6 +48,7 @@ private:
 	Stack<Command*> toUndo;
 	Stack<Command*> toRedo;
 	void cleanToRedoStack();
+	void enableOrDisableUndoRedoButtons();
 
 private slots:
 	void addLine();

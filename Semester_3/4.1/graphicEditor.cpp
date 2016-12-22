@@ -39,6 +39,7 @@ GraphicEditor::GraphicEditor(QWidget *parent) :
 
 	acceptButton->setEnabled(false);
 	denyButton->setEnabled(false);
+	enableOrDisableUndoRedoButtons();
 
 	connect(addButton, SIGNAL(clicked()), this, SLOT(addLine()));
 	connect(moveButton, SIGNAL(clicked()), this, SLOT(moveLine()));
@@ -57,6 +58,7 @@ void GraphicEditor::addLine()
 	auto line = addLine(startPos, destPos);
 	toUndo.push(new AddLineCommand(line));
 	cleanToRedoStack();
+	enableOrDisableUndoRedoButtons();
 }
 
 QGraphicsLineItem* GraphicEditor::addLine(QPointF p1, QPointF p2)
@@ -106,6 +108,7 @@ void GraphicEditor::deleteLine()
 	cleanToRedoStack();
 	toUndo.push(new DeleteLineCommand(deletedLine));
 	toUndo.top()->react();
+	enableOrDisableUndoRedoButtons();
 }
 
 void GraphicEditor::acceptMove()
@@ -116,10 +119,9 @@ void GraphicEditor::acceptMove()
 	deleteButton->setEnabled(true);
 	acceptButton->setEnabled(false);
 	denyButton->setEnabled(false);
-	undoButton->setEnabled(true);
-	redoButton->setEnabled(true);
 
 	toUndo.push(new MoveLineCommand(line, toUndo.pop()));
+	enableOrDisableUndoRedoButtons();
 
 	removeAuxCircles();
 }
@@ -132,8 +134,7 @@ void GraphicEditor::denyMove()
 	deleteButton->setEnabled(true);
 	acceptButton->setEnabled(false);
 	denyButton->setEnabled(false);
-	undoButton->setEnabled(true);
-	redoButton->setEnabled(true);
+	enableOrDisableUndoRedoButtons();
 
 	removeAuxCircles();
 }
@@ -146,6 +147,7 @@ void GraphicEditor::undo()
 		command->act();
 		toRedo.push(command);
 	}
+	enableOrDisableUndoRedoButtons();
 }
 
 void GraphicEditor::redo()
@@ -156,6 +158,7 @@ void GraphicEditor::redo()
 		command->react();
 		toUndo.push(command);
 	}
+	enableOrDisableUndoRedoButtons();
 }
 
 QPointF GraphicEditor::getCircleCenter(QGraphicsEllipseItem* circle)
@@ -188,5 +191,11 @@ void GraphicEditor::cleanToRedoStack()
 	{
 		delete toRedo.pop();
 	}
+}
+
+void GraphicEditor::enableOrDisableUndoRedoButtons()
+{
+	undoButton->setEnabled((bool)toUndo.size());
+	redoButton->setEnabled((bool)toRedo.size());
 }
 

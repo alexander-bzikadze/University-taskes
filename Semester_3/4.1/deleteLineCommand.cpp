@@ -1,6 +1,6 @@
 #include "deleteLineCommand.hpp"
 
-DeleteLineCommand::DeleteLineCommand(QGraphicsItem* line) :
+DeleteLineCommand::DeleteLineCommand(QGraphicsItem *const line) :
 	deletedLine(line)
 {}
 

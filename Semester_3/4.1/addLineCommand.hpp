@@ -7,7 +7,7 @@ class AddLineCommand : public Command
 {
 public:
 	/// Takes just added line.
-	AddLineCommand(QGraphicsItem* line);
+	AddLineCommand(QGraphicsItem *const line);
 
 	/// Deletes contained line.
 	~AddLineCommand();
@@ -19,5 +19,5 @@ public:
 	QGraphicsItem* react() override;
 
 private:
-	QGraphicsItem* addedLine;
+	QGraphicsItem *const addedLine;
 };

@@ -1,16 +1,13 @@
 #include "moveLineCommand.hpp"
 
-MoveLineCommand::MoveLineCommand(QGraphicsItem* line, Command* command) :
+MoveLineCommand::MoveLineCommand(QGraphicsItem *const line, Command* command) :
 	command(command) ,
 	movedLine(line)
 {}
 
 MoveLineCommand::~MoveLineCommand()
 {
-	if (command != nullptr)
-	{
-		delete command;
-	}
+	delete command;
 }
 
 QGraphicsItem* MoveLineCommand::act()

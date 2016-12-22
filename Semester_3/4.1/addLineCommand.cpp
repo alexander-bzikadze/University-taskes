@@ -1,15 +1,12 @@
 #include "addLineCommand.hpp"
 
-AddLineCommand::AddLineCommand(QGraphicsItem* line) :
+AddLineCommand::AddLineCommand(QGraphicsItem *const line) :
 	addedLine(line)
 {}
 
 AddLineCommand::~AddLineCommand()
 {
-	if (addedLine != nullptr)
-	{
-		delete addedLine;
-	}
+	delete addedLine;
 }
 
 QGraphicsItem* AddLineCommand::act()

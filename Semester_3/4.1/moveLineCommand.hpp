@@ -8,7 +8,7 @@ class MoveLineCommand : public Command
 {
 public:
 	/// Takes just moved line and command, that has hidden its previous inplacement.
-	MoveLineCommand(QGraphicsItem* line, Command* command);
+	MoveLineCommand(QGraphicsItem *const line, Command* command);
 
 	/// Deletes contained command.
 	~MoveLineCommand();
@@ -21,5 +21,5 @@ public:
 
 private:
 	Command* command;
-	QGraphicsItem* movedLine;
+	QGraphicsItem *const movedLine;
 };

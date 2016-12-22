@@ -7,7 +7,7 @@ class DeleteLineCommand : public Command
 {
 public:
 	/// Takes just deleted line. In fact it is just set invisible.
-	DeleteLineCommand(QGraphicsItem* line);
+	DeleteLineCommand(QGraphicsItem *const line);
 
 	/// Does not delete contained line, as it is supposed to visible at the moment.
 	~DeleteLineCommand() = default;
@@ -19,5 +19,5 @@ public:
 	QGraphicsItem* react() override;
 
 private:
-	QGraphicsItem* deletedLine;
+	QGraphicsItem *const deletedLine;
 };
