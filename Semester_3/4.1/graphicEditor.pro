@@ -2,7 +2,7 @@ CONFIG += c++11
 
 DESTDIR = bin
 
-HEADERS += graphicEditor.hpp command.hpp addLineCommand.hpp deleteLineCommand.hpp moveLineCommand.hpp stack.hpp
+HEADERS += graphicEditor.hpp command.hpp addLineCommand.hpp deleteLineCommand.hpp moveLineCommand.hpp 
 
 QMAKE_CXXFLAGS += -std=c++11 -v -Wall
 QT += core gui

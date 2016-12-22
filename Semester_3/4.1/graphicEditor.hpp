@@ -4,8 +4,8 @@
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QPushButton>
+#include <QStack>
 
-#include "stack.hpp"
 #include "command.hpp"
 
 /// Graphic editor that can:
@@ -45,8 +45,8 @@ private:
 	QPointF const static startPos;
 	QPointF const static destPos;
 
-	Stack<Command*> toUndo;
-	Stack<Command*> toRedo;
+	QStack<Command*> toUndo;
+	QStack<Command*> toRedo;
 	void cleanToRedoStack();
 	void enableOrDisableUndoRedoButtons();
 
