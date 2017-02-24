@@ -1,0 +1,2 @@
+Func:
+	fsharpi Func.fs
