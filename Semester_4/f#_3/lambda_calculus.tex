@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+
+
+\usepackage{cmap}					% поиск в PDF
+
+% настройки общие
+\usepackage{amsfonts, amsmath, amssymb, amsthm, mathtools}
+
+%рисунки
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+% эпиграф
+\usepackage{epigraph}
+
+%цвета
+\usepackage{color}
+
+%гиперссылки
+\usepackage{hyperref}
+
+%комментарии
+\usepackage{comment}
+
+% empty Both header and footer are empty.
+\pagestyle{empty}
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строк в таблице
+
+%расположение "документа"
+\addtolength{\topmargin}{-3.0 cm} \addtolength{\oddsidemargin}{-2.2
+cm} \addtolength{\textwidth}{5 cm} \textheight=25.2cm
+
+
+
+%обычные компиляция
+%\usepackage[T2A]{fontenc}
+%\usepackage[cp1251]{inputenc} 
+%или 
+%\usepackage[utf8]{inputenc}			% кодировка исходного текста
+%\usepackage[russian]{babel}
+%онлайн компиляция
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setmainfont[Mapping=tex-text]{CMU Serif}
+
+%% Шрифты
+\usepackage{euscript}	 % Шрифт Евклид
+\usepackage{mathrsfs} % Красивый матшрифт
+
+
+%счетчик для задач
+\newcounter{iii}
+\newcommand{\ii}{\par \medskip \noindent \refstepcounter{iii} \textbf{\arabic{iii}.} }
+
+%традиционные сокращения
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\les}{\leqslant}
+\newcommand{\ges}{\geqslant}
+\newcommand{\ex}{\exists\,}
+\newcommand{\al}{\forall\,}
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\le}{\geqslant}
+
+
+
+\newcommand{\qwerty}[2]{
+\begin{equation}
+	#1 > #2
+\end{equation}
+}
+
+\newcommand{\tit}{Lambda calculus}
+\newcommand{\who}{Alexander Bzikadze}
+\newcommand{\dat}{12.03.17}
+
+
+\begin{document}
+
+$$
+3.3) ((\lambda\ a.(\lambda\ b.\ b\ b)\ (\lambda\ b.\ b\ b))\ b)\ ((\lambda\ c.(c\ b))\ (\lambda\ a.\ a))\ =_\beta
+$$$$
+((\lambda\ b.\ b\ b)\ (\lambda\ b.\ b\ b))\ ((\lambda\ a.\ a)\ b) =_\beta$$
+$$
+(\lambda\ b.\ b\ b)\ (\lambda\ b.\ b\ b)\ (b) =_$$
+$$
+w\ w\ b
+$$
+
+$$
+3.4)\ S\ K\ K\ =_\eta\ \lambda\ x.\ S\ K\ K\ x\ =_\eta\ \lambda\ x.\ K\ x\ (K\ x)\ =_\eta \lambda\ x.\ x\ = I
+$$
+
+\end{document}
