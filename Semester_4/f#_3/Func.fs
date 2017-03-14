@@ -9,10 +9,10 @@ let isUnique l =
   helper (List.sort l) // tried >> but it went wrong as List.sort is generic. Aid?
 
 let maxNeighbour l = 
-  let rec helper l acc =
+  let rec helper l acc sec_acc =
     match l with
-      | x :: y :: xs -> helper (y :: xs) (max acc (x + y))
-      | _ -> Some(acc)
+      | x :: y :: xs -> helper (y :: xs) (max acc (x + y)) (sec_acc + 1)
+      | _ -> Some(sec_acc)
   match l with
-    | x :: y :: xs -> helper (y :: xs) (x + y)
+    | x :: y :: xs -> helper (y :: xs) (x + y) 0
     | _ -> None
