@@ -1,0 +1,8 @@
+generate_load_scripts: true
+source https://nuget.org/api/v2
+
+nuget NUnit
+nuget FsUnit
+nuget FsCheck
+nuget FsCheck.NUnit
+nuget Fuchu

@@ -1,0 +1,2 @@
+all:
+	fsharpi FuncTest.fsx
