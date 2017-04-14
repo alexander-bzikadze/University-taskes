@@ -1,0 +1,2 @@
+all:
+	fsharpi contestModule.fs

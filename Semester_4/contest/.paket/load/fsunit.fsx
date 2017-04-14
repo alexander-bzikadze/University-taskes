@@ -1,0 +1,5 @@
+#load @"fsharp.core.fsx" 
+#load @"fsharp.core.fsx" 
+#load @"netstandard.library.fsx" 
+#load @"nunit.fsx" 
+#r "../../packages/FsUnit/lib/net45/FsUnit.NUnit.dll" 

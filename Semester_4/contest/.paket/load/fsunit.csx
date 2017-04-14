@@ -1,0 +1,5 @@
+#load "fsharp.core.csx" 
+#load "fsharp.core.csx" 
+#load "netstandard.library.csx" 
+#load "nunit.csx" 
+#r "../../packages/FsUnit/lib/net45/FsUnit.NUnit.dll" 
