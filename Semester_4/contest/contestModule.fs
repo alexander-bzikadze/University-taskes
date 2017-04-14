@@ -46,5 +46,4 @@ module Contest
     | [] -> true
     | _ -> false
 
-  let push el s =
 
