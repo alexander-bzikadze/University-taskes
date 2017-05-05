@@ -36,14 +36,26 @@ module Contest
     else
       printRow 1 n
 
+  let rec insertIntoSortedList value l = 
+    match l with
+    | (x :: xs) -> (if x < value then (fun l -> x :: value :: l) else (fun l -> value :: x :: l)) <| xs
+    | [] -> [value]
 
+  let saveHead l =
+    match l with
+    | [] -> raise (System.Exception("Queue is empty!"))
+    | _ -> l.Head
 
-  type Stack<'a> = //
-    { list : 'a List }
+  let saveTail l =
+    match l with
+    | [] -> raise (System.Exception("Queue is empty!"))
+    | _ -> l.Tail
 
-  let isEmpty s =
-    match s.list with
-    | [] -> true
-    | _ -> false
+  type PriorityQueue<'a when 'a: comparison>() = //'
+    let mutable (l : List<'a>) = []
+    member this.push value =
+      l <- insertIntoSortedList value l
 
-
+    member this.top = saveHead l
+    member this.pop = 
+      l <- saveTail l
