@@ -5,51 +5,51 @@ open NUnit.Framework
 
 [<Test>]
 let ``bestStack ((( test`` () =
-  Assert.AreEqual(Solution5.bestStack "(((",false)
+  Assert.IsFalse(Solution5.bestStack "(((")
 
 [<Test>]
 let ``bestStack {{{ test`` () =
-  Assert.AreEqual(Solution5.bestStack "{{{",false)
+  Assert.IsFalse(Solution5.bestStack "{{{")
 
 [<Test>]
 let ``bestStack [[[ test`` () =
-  Assert.AreEqual(Solution5.bestStack "[[[",false)
+  Assert.IsFalse(Solution5.bestStack "[[[")
 
 [<Test>]
 let ``bestStack ))) test`` () =
-  Assert.AreEqual(Solution5.bestStack ")))",false)
+  Assert.IsFalse(Solution5.bestStack ")))")
 
 [<Test>]
 let ``bestStack }}} test`` () =
-  Assert.AreEqual(Solution5.bestStack "}}}",false)
+  Assert.IsFalse(Solution5.bestStack "}}}")
 
 [<Test>]
 let ``bestStack ]]] test`` () =
-  Assert.AreEqual(Solution5.bestStack "]]]",false)
+  Assert.IsFalse(Solution5.bestStack "]]]")
 
 [<Test>]
 let ``bestStack ((())) test`` () =
-  Assert.AreEqual(Solution5.bestStack "((()))",true)
+  Assert.IsTrue(Solution5.bestStack "((()))")
 
 [<Test>]
 let ``bestStack {{{}}} test`` () =
-  Assert.AreEqual(Solution5.bestStack "{{{}}}",true)
+  Assert.IsTrue(Solution5.bestStack "{{{}}}")
 
 [<Test>]
 let ``bestStack [[[]]] test`` () =
-  Assert.AreEqual(Solution5.bestStack "[[[]]]",true)
+  Assert.IsTrue(Solution5.bestStack "[[[]]]")
 
 [<Test>]
 let ``bestStack ({[]}) test`` () =
-  Assert.AreEqual(Solution5.bestStack "({[]})",true)
+  Assert.IsTrue(Solution5.bestStack "({[]})")
 
 [<Test>]
 let ``bestStack ({[aaa]}) test`` () =
-  Assert.AreEqual(Solution5.bestStack "({[aaa]})",true)
+  Assert.IsTrue(Solution5.bestStack "({[aaa]})")
 
 [<Test>]
 let ``freeFunc 3 [1;2;3] test`` () =
-  Assert.AreEqual(Solution5.freeFunc 3 [1;2;3], [3; 6; 9])
+  Assert.AreEqual(Solution5.freeFunc 3 [1;2;3], [3;6;9])
 
 [<Test>]
 let ``subst y replace x in (\x -> x y), get \x -> x x test`` () =

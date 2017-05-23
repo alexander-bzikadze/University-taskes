@@ -3,8 +3,6 @@ namespace Sem4Tasks
 /// Documentation for Solution6
 /// Solution6 is a library of solutions. Hmmm, strong with the obvious, this one is.
 module Solution6 = 
-  open System.IO
-
   type OS(name : string, probability : double) =
     member val Name = name with get
     member val Probability = probability with get
@@ -17,22 +15,27 @@ module Solution6 =
   type Net(comps : Comp list) =
     let random = System.Random()
 
-    let AreInfected() =
+    let areInfected() =
       not <| List.exists (fun (comp : Comp) -> not comp.IsInfected) comps
 
-    let SpreadInfection() =
-      for comp in comps do
+    let spreadInfectionOnce (comp : Comp) =
+      for connectedComp in comp.Connections do
+        if not connectedComp.IsInfected && random.NextDouble() <= connectedComp.Os.Probability then
+          connectedComp.IsInfected <- true
+
+
+    member this.SpreadInfection() =
+      let oldState = comps
+      for comp in oldState do
         if comp.IsInfected then
-          for connectedComp in comp.Connections do
-            if not connectedComp.IsInfected && random.NextDouble() <= connectedComp.Os.Probability then
-              connectedComp.IsInfected <- true
+          spreadInfectionOnce comp
 
     member val comps = comps with get
 
     /// Tries to infect all the computers in the net
     member this.Simulate() =
-      while (not <| AreInfected()) do
-        SpreadInfection()
+      while (not <| areInfected()) do
+        this.SpreadInfection()
         let boolToInt b = if b then 1 else 0
         // Does we need more exact output on the net's state?
         printf "%d computers are infected\n" <| List.fold (fun x (y : Comp) -> x + (y.IsInfected |> boolToInt)) 0 comps
@@ -45,7 +48,7 @@ module Solution6 =
     | Branch of Node<'a> * 'a * Node<'a>
 
   type TreeIterator<'a when 'a : comparison>(root : Node<'a>) = //'
-    let GetList =
+    let getList =
       let rec helper root =
         match root with
         | Branch (l, x, r) -> List.append <| List.append (helper l) (List.singleton x) <| (helper r)
@@ -53,7 +56,7 @@ module Solution6 =
       helper
     let root = root
     let mutable index = -1
-    let list = GetList root
+    let list = getList root
     let length = List.length list
 
     interface System.Collections.Generic.IEnumerator<'a> with //'
@@ -69,7 +72,7 @@ module Solution6 =
   /// Simple binary tree with iterator
   type Tree<'a when 'a : comparison>() = 
     let mutable root = Empty
-    member this.insert elem =
+    member this.Insert elem =
       let rec ins root elem =
         match root with
         | Empty -> Branch (Empty, elem, Empty)
@@ -78,7 +81,7 @@ module Solution6 =
         | Branch (l, x, r) when x < elem -> Branch (l, x, ins r elem)
       root <- ins root elem
 
-    member this.find =
+    member this.Find =
       let rec fin root elem =
         match root with
         | Empty -> false
@@ -87,7 +90,7 @@ module Solution6 =
         | Branch (_, x, r) when x < elem -> fin r elem
       fin root
 
-    member this.delete elem =
+    member this.Delete elem =
       let rec findLeft root =
         match root with
         | Empty -> raise <| System.Exception("Unexpected path in Solution6.Tree<a>.delete.findLeft!")
