@@ -1,0 +1,25 @@
+type project
+title
+    Sem4Tasks
+owners
+    alexander.bzikadze
+authors 
+    alexander.bzikadze
+projectUrl
+    https://github.com/alexander-bzikadze/University_tasks/alexander-bzikadze/University_tasks
+iconUrl
+    https://raw.githubusercontent.com/alexander-bzikadze/University_tasks/master/docs/files/img/logo.png
+licenseUrl
+    https://github.com/alexander-bzikadze/University_tasks/alexander-bzikadze/University_tasks/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    fsharp
+summary
+    Tasks for semester 4
+description
+    Home tasks for semester 4 in SPbU. Done in F#.
+
+
