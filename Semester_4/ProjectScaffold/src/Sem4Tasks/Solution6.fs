@@ -10,25 +10,23 @@ module Solution6 =
   type Comp(os : OS, connected : Comp list) =
     member val Os = os with get
     member val Connections = connected with get, set
-    member val IsInfected = false with get, set
+    member val InfectionTime = 0 with get, set
 
   type Net(comps : Comp list) =
     let random = System.Random()
+    let mutable time = 1
 
     let areInfected() =
-      not <| List.exists (fun (comp : Comp) -> not comp.IsInfected) comps
-
-    let spreadInfectionOnce (comp : Comp) =
-      for connectedComp in comp.Connections do
-        if not connectedComp.IsInfected && random.NextDouble() <= connectedComp.Os.Probability then
-          connectedComp.IsInfected <- true
-
+      not <| List.exists (fun (comp : Comp) -> comp.InfectionTime <> time) comps
 
     member this.SpreadInfection() =
-      let oldState = comps
-      for comp in oldState do
-        if comp.IsInfected then
-          spreadInfectionOnce comp
+      for comp in comps do
+        if comp.InfectionTime = time then
+          for connectedComp in comp.Connections do
+            if connectedComp.InfectionTime <> time && random.NextDouble() <= connectedComp.Os.Probability then
+              connectedComp.InfectionTime <- time + 1
+          comp.InfectionTime <- time + 1
+      time <- time + 1
 
     member val comps = comps with get
 
@@ -38,7 +36,7 @@ module Solution6 =
         this.SpreadInfection()
         let boolToInt b = if b then 1 else 0
         // Does we need more exact output on the net's state?
-        printf "%d computers are infected\n" <| List.fold (fun x (y : Comp) -> x + (y.IsInfected |> boolToInt)) 0 comps
+        printf "%d computers are infected\n" <| List.fold (fun x (y : Comp) -> x + (y.InfectionTime = time |> boolToInt)) 0 comps
 
 
 
@@ -54,7 +52,6 @@ module Solution6 =
         | Branch (l, x, r) -> List.append <| List.append (helper l) (List.singleton x) <| (helper r)
         | Empty -> []
       helper
-    let root = root
     let mutable index = -1
     let list = getList root
     let length = List.length list

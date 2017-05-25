@@ -49,24 +49,23 @@ module Solution5 =
       for line in listOfTele do
         let (Line (name, number)) = line
         fprintf file "%s %s\n" name number
-    let readUp originalListOfTele =
+    let readUp listOfTele =
       try
         use file = new StreamReader "./phoneDataBase"
-        let mutable valid = true
-        let mutable listOfTele = []
-        while (valid) do 
+
+        let rec whileValid (file : StreamReader) listOfTele =
           let line = file.ReadLine()
           if (line = null) then
-              valid <- false
+              listOfTele
           else
             let name = line.Split(' ').[0]
             let number = line.Split(' ').[1]
-            listOfTele <- Line (name, number) :: listOfTele
-        listOfTele
+            whileValid file <| (if List.exists (fun x -> x = Line (name, number)) listOfTele then id else List.append [Line (name, number)]) listOfTele
+        whileValid file listOfTele
       with
       | _ -> 
         printf "Error when opening ./phoneDataBase, continuing work without loading.\n"
-        originalListOfTele
+        listOfTele
 
     let rec nextStep listOfTele =
       let rec helper state listOfTele =

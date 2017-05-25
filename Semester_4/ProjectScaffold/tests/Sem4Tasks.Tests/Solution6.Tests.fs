@@ -11,12 +11,12 @@ let ``Test with 3 connected computers``() =
   let linux = OS("linux", 0.3)
   let computers = [Comp(windows, []); Comp(mac, []); Comp(linux, [])]
   computers.[0].Connections <- [computers.[1]; computers.[2]]
-  computers.[0].IsInfected <- true
+  computers.[0].InfectionTime <- 1
   let network = Net(computers)
   network.Simulate()
-  Assert.IsTrue(network.comps.[0].IsInfected)
-  Assert.IsTrue(network.comps.[1].IsInfected)
-  Assert.IsTrue(network.comps.[2].IsInfected)
+  Assert.IsTrue(network.comps.[0].InfectionTime <> 0)
+  Assert.IsTrue(network.comps.[1].InfectionTime <> 0)
+  Assert.IsTrue(network.comps.[2].InfectionTime <> 0)
 
 
 [<Test>]
