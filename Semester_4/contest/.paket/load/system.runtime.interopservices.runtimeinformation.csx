@@ -1,0 +1,7 @@
+#load "system.reflection.csx" 
+#load "system.reflection.extensions.csx" 
+#load "system.resources.resourcemanager.csx" 
+#load "system.runtime.csx" 
+#load "system.runtime.interopservices.csx" 
+#load "system.threading.csx" 
+#r "../../packages/System.Runtime.InteropServices.RuntimeInformation/lib/net45/System.Runtime.InteropServices.RuntimeInformation.dll" 
